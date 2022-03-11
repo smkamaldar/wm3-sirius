@@ -2,6 +2,7 @@ import express from "express";
 import morgan from "morgan";
 import path from "path";
 
+// categorising APIs
 import userRoute from "./routes/user";
 import starRoute from "./routes/star";
 import authRoute from "./routes/auth";
@@ -26,6 +27,7 @@ if (app.get("env") === "production") {
 	app.use(httpsOnly());
 }
 
+// using middleware in order to routing
 app.use("/api/user", userRoute);
 app.use("/api/stars", starRoute)
 app.use("/api/auth", authRoute)
