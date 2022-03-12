@@ -1,4 +1,5 @@
 import http from "http";
+console.log("whoo-hoo-2222");
 
 import app from "./app";
 import { connectDb, disconnectDb } from "./db";
