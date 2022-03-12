@@ -7,7 +7,7 @@ const router = Router();
 router.get("/", async (req, res) => {
    
     try {
-        const stars = await pool.query("SELECT * FROM stars");
+        const stars = await pool.query("SELECT id, title, competence, situation, task, action, result, created_at, updated_at FROM stars");
         res.status(200).json(stars.rows)
     } catch (error) {
         res.status(500).json(error)
@@ -25,7 +25,10 @@ router.get("/:starId", async (req, res) => {
     try {
         const id = Number(starId)
         const stars = await pool.query("SELECT * FROM stars WHERE id = $1", [id]);
-        res.status(200).json(stars.rows)
+        if (stars.rows.length === 0){
+            return res.status(404).json({msg: "the star not found", status:"error" })
+        }
+        res.status(200).json(stars.rows[0])
     } catch (error) {
         res.status(500).json(error)
     }
@@ -41,8 +44,9 @@ router.post("/", async (req, res) => {
 
 
     try {
-        const values = [title, situation, task, action, result, new Date()]
-        const star = await pool.query("INSERT INTO stars (title, situation, task, action, result, created_at) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *", values)
+        const currentDate = new Date()
+        const values = [title, situation, task, action, result, currentDate, currentDate]
+        const star = await pool.query("INSERT INTO stars (title, situation, task, action, result, created_at, updated_at) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *", values)
         res.status(200).json(star.rows[0])
     } catch (error) {
         res.status(500).json(error)
