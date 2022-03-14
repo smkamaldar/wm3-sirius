@@ -35,7 +35,7 @@ router.get("/:starId", async (req, res) => {
 })
 
 router.post("/", async (req, res) => {
-    const { title, situation, task, action, result } = req.body;
+    const { title, competence, situation, task, action, result } = req.body;
 
     // validations
     if (!title || !situation || !task || !action || !result) {
@@ -45,8 +45,8 @@ router.post("/", async (req, res) => {
 
     try {
         const currentDate = new Date()
-        const values = [title, situation, task, action, result, currentDate, currentDate]
-        const star = await pool.query("INSERT INTO stars (title, situation, task, action, result, created_at, updated_at) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *", values)
+        const values = [title, competence, situation, task, action, result, currentDate, currentDate]
+        const star = await pool.query("INSERT INTO stars (title, competence, situation, task, action, result, created_at, updated_at) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *", values)
         res.status(200).json(star.rows[0])
     } catch (error) {
         res.status(500).json(error)
