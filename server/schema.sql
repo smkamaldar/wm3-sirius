@@ -4,13 +4,14 @@ CREATE TABLE users (
   last_name              VARCHAR(30) NOT NULL,
   email                  VARCHAR(30) NOT NULL,
   password               VARCHAR(12) NOT NULL,
-  created_at             TIMESTAMP  NOT NULL
+  created_at             TIMESTAMP  NOT NULL,
+  updated_at             TIMESTAMP  NOT NULL
 );
 
 CREATE TABLE stars (
     id                   SERIAL PRIMARY KEY,
     user_id              INTEGER,
-    competence_id        INTEGER NOT NULL,
+    competence           TEXT NOT NULL,
     title                TEXT NOT NULL,
     situation            TEXT NOT NULL,
     task                 TEXT NOT NULL,
@@ -18,11 +19,6 @@ CREATE TABLE stars (
     result               TEXT NOT NULL,
     created_at           TIMESTAMP  NOT NULL,
     updated_at           TIMESTAMP  NOT NULL
-);
-
-CREATE TABLE competencies (
-    id                  SERIAL PRIMARY KEY,
-    name                TEXT NOT NULL
 );
 
 /* Proprity 4
