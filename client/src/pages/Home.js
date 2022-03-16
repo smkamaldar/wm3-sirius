@@ -1,42 +1,60 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+// import { useEffect, useState } from "react";
+// import { Link } from "react-router-dom";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
+// import AddEntry from "./AddEntry";
+import ViewEntries from "./ViewEntries";
+
 
 import "./Home.css";
-import logo from "./logo.svg";
 
 export function Home() {
-	const [message, setMessage] = useState("Loading...");
-
-	useEffect(() => {
-		fetch("/api")
-			.then((res) => {
-				if (!res.ok) {
-					throw new Error(res.statusText);
-				}
-				return res.json();
-			})
-			.then((body) => {
-				setMessage(body.message);
-			})
-			.catch((err) => {
-				console.error(err);
-			});
-	}, []);
 
 	return (
 		<main role="main">
 			<div>
-				<img
-					className="logo"
-					data-qa="logo"
-					src={logo}
-					alt="Just the React logo"
-				/>
-				<h1 className="message" data-qa="message">
-					{message}
-				</h1>
-				<Link to="/about/this/site">About</Link>
-			</div>
+			<Box
+          sx={{
+            bgcolor: "background.paper",
+            pt: 8,
+            pb: 6,
+          }}
+        >
+          <Container maxWidth="sm">
+            <Typography
+			fontFamily="QuickSand"
+              component="h1"
+              variant="h2"
+              align="center"
+              color="text.primary"
+              gutterBottom
+            >
+              Sirius.
+            </Typography>
+            <Typography fontFamily="QuickSand" variant="h5" align="center" color="text.secondary" paragraph>
+             Keep track of your progress.  And share your thoughts and ideas with the world. Let's get started.
+            </Typography>
+            <Stack
+              sx={{ pt: 4 }}
+              direction="row"
+              spacing={2}
+              justifyContent="center"
+            >
+
+              <Button href="/addentry" style={{
+                    color: "white",
+                    backgroundColor: "rgb(0, 0, 0)",
+                    borderRadius: "5px",
+                }}variant="contained">
+					Add A Star</Button>
+              <Button href="/viewentries" variant="outlined">View Entries</Button>
+            </Stack>
+          </Container>
+        </Box>
+					</div>
 		</main>
 	);
 }

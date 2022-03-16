@@ -1,11 +1,113 @@
-.logo {
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+/* Base styling */
+*{
+	margin: 0;
+	font-family: "Quicksand", sans-serif;
+	color: rgb(196, 190, 190);
+}
+/* Header */
+.navbar {
+	padding: 20px;
+	display:flex;
+	align-items: center;
+	justify-content: space-around;
+	max-width: 2000px;
+	margin: 0 auto;
+	border-bottom: 1px solid rgb(224, 129, 129);
+	
+}
+/* .navbar .logo {
+	font-size: 30px;
+	font-weight: bold;
+	margin-right: 20px;
+	
+} */
+
+.navbar h1 {
+	color: rgb(192, 115, 115);
+	font-size: 2.5em;
+}
+
+.navbar .links{
+	margin-left: auto;
+}
+
+.navbar a {
+	margin-left: 16px;
+	text-decoration: none;
+	padding: 6px;
+}
+
+.navbar a:hover {
+	background-color: rgb(224, 129, 129);
+}
+
+/* Content */
+
+.content {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 20px;
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 100px;
+}
+
+/* Star entries */
+.main {
+	/* position: absolute; */
+	/* top: 50%;
+	left: 50%; */
+	/* transform: translate(-50%, -50%); */
+	width: 75%;
+	margin: 0 auto;
+	margin-top: 40px;
+	align-self: center;
+}
+.EntryForm {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.EntryTitle h1 {
+	font-size: 2em;
+	margin-bottom: 20px;
+	text-align: center;
+	color:rgb(192, 115, 115);
+}
+
+.main:hover{
+	box-shadow: 1px 3px 5px rgb(0, 0, 0, 0.1);
+}
+
+.EntryForm h2{
+	font-size:20px;
+	color: rgb(192, 115, 115);
+	margin-bottom: 8px;
+}
+/*Button Styles*/
+/* .button {
+	display: inline-block;
+	border-radius: 10px;
+	border: 4px double #cccccc;
+	color: #eeeeee;
+	text-align: center;
+	font-size: 28px;
+	padding: 20px;
 	width: 100px;
-}
+	margin-right: 20px;
+	margin-bottom: 20px;
+	transition: all 0.5s;
+	cursor: pointer;
+} */
 
-.message {
-	color: blue;
-}
-
-.message:hover {
-	background-color: yellow;
+Footer {
+	padding: 20px;
+	position: relative;
+	background-color: rgb(224, 129, 129);
+	color: rgb(255, 255, 255);
+	text-align: center;
 }
