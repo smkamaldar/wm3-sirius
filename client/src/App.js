@@ -7,6 +7,9 @@ import AddEntry from "./pages/AddEntry";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import ViewEntries from "./pages/ViewEntries";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+
 
 
 const App = () => (
@@ -19,6 +22,8 @@ const App = () => (
 			<Route path="/viewentries" element={<ViewEntries />} />
 			<Route path="/SignIn" element={<SignIn />} />
 			<Route path="/SignUp" element={<SignUp />} />
+			<Route path="/About" element={<About />} />
+			<Route path="/Contact" element={<Contact />} />
 	</Routes>
 
 	<Footer />

@@ -7,6 +7,48 @@ import "./Home.css";
 
 const AddEntry = () => (
 
+  // handleSubmit(event) {
+
+  //   event.preventDefault();
+  //   const data = new FormData(event.target);
+  //   const entry = {
+  //     title: data.get("title"),
+  //     Situation: data.get("Situation"),
+  //     Task: data.get("Task"),
+  //     Action: data.get("Action"),
+  //     Result: data.get("Result"),
+  //     date: data.get("date"),
+  //     time: data.get("time")
+  //   };
+
+  //   fetch("http://localhost:5000/api/entries", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     },
+  //     body: JSON.stringify(entry)
+  //   })
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       console.log(data);
+  //       this.setState({
+  //         title: "",
+  //         Situation: "",
+  //         Task: "",
+  //         Action: "",
+  //         Result: "",
+  //         date: "",
+  //         time: ""
+  //       });
+
+  //       this.props.history.push("/");
+  //     });
+  // }
+
+  // return (
+
+
+
 	<main className="main">
 		<div className="EntryTitle">
 			<h1>Add A Star</h1>
@@ -76,6 +118,9 @@ const AddEntry = () => (
 </div>
 
 	</main>
+
 );
+
+
 
 export default AddEntry;
