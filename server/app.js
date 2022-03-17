@@ -27,6 +27,7 @@ app.use(session({
 	saveUninitialized: true
 }))
 initializePassport(passport);
+// everytime we load routes they run
 app.use(passport.initialize())
 app.use(passport.session())
 
