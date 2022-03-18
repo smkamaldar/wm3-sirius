@@ -12,6 +12,7 @@ router.post("/login",passport.authenticate('local'), (req, res)=>{
     res.json(req.session.passport.user)
 })
 
+
 router.post("/register", async (req, res) => {
     try {
         const hashedPassword = await bcrypt.hash(req.body.password, 10)
