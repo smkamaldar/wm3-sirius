@@ -38,10 +38,10 @@ export const pushStateRouting = (apiRoot, staticDir) => (req, res, next) => {
 };
 
 export const isAuth = (req, res, next)=>{
+	// will return true if user is logged in
 	if(req.isAuthenticated()){
-		// req.isAuthenticated() will return true if user is logged in
 		next();
 	}else {
 		res.status(401).json({ msg:"You are not authorized"})
 	}
-}
+} 
