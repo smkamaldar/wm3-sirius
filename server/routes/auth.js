@@ -12,6 +12,11 @@ router.post("/login",passport.authenticate('local'), (req, res)=>{
     res.json(req.session.passport.user)
 })
 
+router.post("/logout", (req, res)=>{
+    req.logout();
+    res.status(401).send({msg:"log out successfully"})
+})
+
 router.post("/register", async (req, res) => {
     try {
         const hashedPassword = await bcrypt.hash(req.body.password, 10)
