@@ -1,4 +1,4 @@
-CREATE TABLE users (
+CREATE TABLE IF NOT EXISTS users (
   id                     SERIAL PRIMARY KEY,
   first_name             VARCHAR(30) NOT NULL,
   last_name              VARCHAR(30) NOT NULL,
@@ -8,7 +8,7 @@ CREATE TABLE users (
   updated_at             TIMESTAMP  NOT NULL
 );
 
-CREATE TABLE stars (
+CREATE TABLE IF NOT EXISTS stars (
     id                   SERIAL PRIMARY KEY,
     user_id              INTEGER,
     competence           TEXT NOT NULL,
@@ -21,8 +21,8 @@ CREATE TABLE stars (
     updated_at           TIMESTAMP  NOT NULL
 );
 
-/* Proprity 4
-CREATE TABLE examples (
+
+/* CREATE TABLE IF NOT EXISTS examples (
     id                       SERIAL PRIMARY KEY,
     example_competence_id    INT NOT NULL,
     example_title            TEXT NOT NULL,
