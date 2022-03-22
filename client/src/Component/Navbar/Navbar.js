@@ -8,7 +8,7 @@ import {
     NavBtnLink,
   } from "./NavbarElements";
 import "../../pages/Home.css";
-import image from "../../Component/assets/Siriuslogo.png";
+import image from "../../assets/Siriuslogo.png";
 
 
 const Navbar = () => {
