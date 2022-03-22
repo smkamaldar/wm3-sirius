@@ -14,7 +14,7 @@ router.post("/login",passport.authenticate('local'), (req, res)=>{
 
 router.post("/logout", (req, res)=>{
     req.logout();
-    res.status(401).send({msg:"log out successfully"})
+    res.status(200).send({msg:"log out successfully"})
 })
 
 router.post("/register", async (req, res) => {

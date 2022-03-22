@@ -22,7 +22,7 @@ const staticDir = path.join(__dirname, "static");
 
 const app = express();
 app.use(session({
-	secret: "secretcode",
+	secret: process.env.SECRET,
 	resave: true,
 	saveUninitialized: true
 }))
