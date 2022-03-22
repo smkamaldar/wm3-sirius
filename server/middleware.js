@@ -1,6 +1,7 @@
 import helmet from "helmet";
 import path from "path";
 
+
 export const configuredHelmet = () =>
 	helmet({
 		contentSecurityPolicy: {
@@ -35,3 +36,12 @@ export const pushStateRouting = (apiRoot, staticDir) => (req, res, next) => {
 	}
 	next();
 };
+
+export const isAuth = (req, res, next)=>{
+	// will return true if user is logged in
+	if(req.isAuthenticated()){
+		next();
+	}else {
+		res.status(401).json({ msg:"You are not authorized"})
+	}
+} 

@@ -1,5 +1,6 @@
 import { Router } from "express";
 import pool from '../db.js'
+import { isAuth } from "../middleware.js";
 
 const router = Router();
 
@@ -53,7 +54,7 @@ router.post("/", async (req, res) => {
     }
 })
 
-router.delete("/:starId", async (req, res) => {
+router.delete("/:starId",isAuth, async (req, res) => {
     const { starId } = req.params;
 
     // validations
@@ -70,7 +71,7 @@ router.delete("/:starId", async (req, res) => {
     }
 })
 
-router.put("/:starId", async (req, res) => {
+router.put("/:starId",isAuth, async (req, res) => {
     const { starId } = req.params
     const { title, situation, task, action, result } = req.body;
 
