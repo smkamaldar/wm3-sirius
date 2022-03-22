@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -5,50 +6,11 @@ import "./Home.css";
 
 
 
-const AddEntry = () => (
+const AddEntry = () => {
 
-  // handleSubmit(event) {
+const navigate = useNavigate();
 
-  //   event.preventDefault();
-  //   const data = new FormData(event.target);
-  //   const entry = {
-  //     title: data.get("title"),
-  //     Situation: data.get("Situation"),
-  //     Task: data.get("Task"),
-  //     Action: data.get("Action"),
-  //     Result: data.get("Result"),
-  //     date: data.get("date"),
-  //     time: data.get("time")
-  //   };
-
-  //   fetch("http://localhost:5000/api/entries", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json"
-  //     },
-  //     body: JSON.stringify(entry)
-  //   })
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       console.log(data);
-  //       this.setState({
-  //         title: "",
-  //         Situation: "",
-  //         Task: "",
-  //         Action: "",
-  //         Result: "",
-  //         date: "",
-  //         time: ""
-  //       });
-
-  //       this.props.history.push("/");
-  //     });
-  // }
-
-  // return (
-
-
-
+return (
 	<main className="main">
 		<div className="EntryTitle">
 			<h1>Add A Star</h1>
@@ -109,17 +71,24 @@ const AddEntry = () => (
 	</div>
 
 	<div className="button">
-	<Button style={{
-                    color: "white",
-                    backgroundColor: "rgb(0, 0, 0)",
-                    borderRadius: "5px",
-                }} variant="contained">Submit</Button>
-	<Button variant="outlined" color="primary"> Cancel </Button>
+
+	<Button
+  onClick={() => navigate("/viewEntries")}
+    style={{
+    color: "white",
+    backgroundColor: "rgb(0, 0, 0)",
+    borderRadius: "5px",
+    }} variant="contained"
+    >Submit</Button>
+	<Button
+  onClick={() => navigate("/")}
+  variant="outlined" color="primary"> Cancel </Button>
 </div>
 
 	</main>
-
 );
+  };
+
 
 
 

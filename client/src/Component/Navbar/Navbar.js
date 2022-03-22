@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import {
     NavLink,
     Bars,
@@ -8,7 +8,7 @@ import {
     NavBtnLink,
   } from "./NavbarElements";
 import "../../pages/Home.css";
-import image from "../../Component/Siriuslogo.png";
+import image from "../../Component/assets/Siriuslogo.png";
 
 
 const Navbar = () => {
@@ -39,7 +39,7 @@ const Navbar = () => {
           </NavLink>
         </NavMenu>
         <NavBtn>
-          <NavBtnLink to='/signin'>Sign In</NavBtnLink>
+          <NavBtnLink to='/register'>Sign In</NavBtnLink>
         </NavBtn>
 
         </nav>

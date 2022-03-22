@@ -17,12 +17,6 @@
 	border-bottom: 1px solid rgb(224, 129, 129);
 	
 }
-/* .navbar .logo {
-	font-size: 30px;
-	font-weight: bold;
-	margin-right: 20px;
-	
-} */
 
 .navbar h1 {
 	color: rgb(192, 115, 115);
@@ -56,10 +50,7 @@
 
 /* Star entries */
 .main {
-	/* position: absolute; */
-	/* top: 50%;
-	left: 50%; */
-	/* transform: translate(-50%, -50%); */
+
 	width: 75%;
 	margin: 0 auto;
 	margin-top: 40px;
@@ -88,21 +79,6 @@
 	color: rgb(192, 115, 115);
 	margin-bottom: 8px;
 }
-/*Button Styles*/
-/* .button {
-	display: inline-block;
-	border-radius: 10px;
-	border: 4px double #cccccc;
-	color: #eeeeee;
-	text-align: center;
-	font-size: 28px;
-	padding: 20px;
-	width: 100px;
-	margin-right: 20px;
-	margin-bottom: 20px;
-	transition: all 0.5s;
-	cursor: pointer;
-} */
 
 Footer {
 	padding: 20px;
