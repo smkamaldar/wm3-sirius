@@ -6,7 +6,7 @@ import {
     NavMenu,
     NavBtn,
     NavBtnLink,
-  } from "./NavbarElements";
+  } from "./NavBarElements";
 import "../../pages/Home.css";
 import image from "../../assets/Siriuslogo.png";
 
