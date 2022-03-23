@@ -1,3 +1,5 @@
+import React, { useState, useEffect } from "react";
+import Axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
@@ -7,8 +9,37 @@ import "./Home.css";
 
 
 const AddEntry = () => {
+const [title, setTitle] = useState("");
+const [situation, setSituation] = useState("");
+const [task, setTask] = useState("");
+const [action, setAction] = useState("");
+const [result, setResult] = useState("");
+const [competence, setCompetence] = useState("");
+  const navigate = useNavigate();
 
-const navigate = useNavigate();
+const submitEntry = () => {
+
+ fetch("/api/stars"), {
+    method: "POST",
+    Headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      title,
+      situation,
+      task,
+      action,
+      result,
+      competence,
+    }),
+  }
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      navigate("/viewEntries");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
 
 return (
 	<main className="main">
@@ -30,42 +61,62 @@ return (
 		<TextField
           id="standard-multiline-static"
           label="Title"
-          Title
+          name="title"
           rows={4}
-          defaultValue="Choose a title for your entry"
+          placeholder="Choose a title for your entry"
           variant="standard"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+      <TextField
+          id="standard-multiline-static"
+          label="Competence"
+          name="competence"
+          rows={4}
+          placeholder="Choose a title for your entry"
+          variant="standard"
+          value={competence}
+          onChange={(e) => setCompetence(e.target.value)}
         />
 				<TextField
           id="standard-multiline-static"
           label="Situation"
-          Situation
+          name="situation"
           rows={3}
-          defaultValue="What is the situation?"
+          placeholder="What is the situation?"
           variant="standard"
+          value={situation}
+          onChange={(e) => setSituation(e.target.value)}
         />
 				<TextField
           id="standard-multiline-static"
           label="Task"
-          Task
+          name="task"
           rows={4}
-          defaultValue="What is the task?"
+          placeholder="What is the task?"
           variant="standard"
+          value={task}
+          onChange={(e) => setTask(e.target.value)}
         />
 				<TextField
           id="standard-multiline-static"
           label="Action"
-          Action
+          name="action"
           rows={4}
-          defaultValue="What was the action you took?"
+          placeholder="What was the action you took?"
           variant="standard"
+          value={action}
+          onChange={(e) => setAction(e.target.value)}
         />
 					<TextField
           id="standard-multiline-static"
           label="Results"
-          Result
+          name="results"
           rows={4}
-          defaultValue="What was the result of your actions?"
+          placeholder="What was the result of your actions?"
           variant="standard"
+          value={result}
+          onChange={(e) => setResult(e.target.value)}
         />
 	</Box>
 	</div>
@@ -73,7 +124,7 @@ return (
 	<div className="button">
 
 	<Button
-  onClick={() => navigate("/viewEntries")}
+   onClick={submitEntry}
     style={{
     color: "white",
     backgroundColor: "rgb(0, 0, 0)",
@@ -86,9 +137,8 @@ return (
 </div>
 
 	</main>
-);
-  };
-
+  );
+};
 
 
 

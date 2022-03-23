@@ -74,6 +74,7 @@
 		"@mui/icons-material": "^5.5.1",
 		"@mui/material": "^5.5.1",
 		"@mui/styled-engine-sc": "^5.4.2",
+		"axios": "^0.26.1",
 		"bcrypt": "^5.0.1",
 		"dotenv": "^16.0.0",
 		"emailjs-com": "^3.2.0",
@@ -81,14 +82,14 @@
 		"express-session": "^1.17.2",
 		"helmet": "^5.0.2",
 		"morgan": "^1.10.0",
+		"passport": "^0.5.2",
+		"passport-local": "^1.0.0",
+		"pg": "^8.7.3",
 		"react-icons": "^4.3.1",
 		"react-landing-page": "^2.0.2",
 		"react-reveal": "^1.2.2",
 		"rebass": "^3.0.0-12",
-		"styled-components": "^5.3.3",
-		"passport": "^0.5.2",
-		"passport-local": "^1.0.0",
-		"pg": "^8.7.3"
+		"styled-components": "^5.3.3"
 	},
 	"engines": {
 		"node": "^12 || ^14 || ^16",
