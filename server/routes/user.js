@@ -5,18 +5,11 @@ import app from "../app";
 
 const router = Router();
 const bcrypt = require("bcrypt");
-const session = require ('express-session');
-const session = require ("express-flash");
- 
 
-app.use(session ({
-	secret:'secret', 
-	resave: false,
-	saveUninitialise: false
-})
-);
+const flash = require ("express-flash");
 
-app.use(flash ());
+
+app.use (flash ());
 // current user detail
 router.get("/", async (req, res) => {
 	res.send("users info")
@@ -42,7 +35,7 @@ router.post('/users/register', async  (req, res) => {
 		msg: 'password do not match'});
 	}
 	//Check password length
-	if(password.length <6>){
+	if(password.length <6){
 		error.push({msg: 'password should be at least 6 characters'});
 	}
 	if(errors.length > 0) {
@@ -78,7 +71,7 @@ router.post('/users/register', async  (req, res) => {
 							res.redirect("/users/login")
 
 						}
-					)
+					);
 
 				}
 
