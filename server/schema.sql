@@ -1,3 +1,8 @@
+drop table if exits users;
+drop table if exists stars;
+drop table if exists competencies;
+/* drop table if exists examples; */
+
 CREATE TABLE users (
   id                     SERIAL PRIMARY KEY,
   first_name             VARCHAR(30) NOT NULL,
@@ -10,7 +15,7 @@ CREATE TABLE users (
 
 CREATE TABLE stars (
     id                   SERIAL PRIMARY KEY,
-    user_id              INTEGER,
+    user_id              INT NOT NULL REFERENCES users(id),
     competence           TEXT NOT NULL,
     title                TEXT NOT NULL,
     situation            TEXT NOT NULL,
@@ -31,10 +36,13 @@ title, situation, task, action, result, created_at, updated_at) VALUES (2, 3, 'T
 /* Proprity 4
 CREATE TABLE examples (
     id                       SERIAL PRIMARY KEY,
-    example_competence_id    INT NOT NULL,
+    user_id                  INT NOT NULL REFERENCES users(id),
+    star_id                  INT NOT NULL REFERENCES stars(id),          
+    example_competence       INT NOT NULL,
     example_title            TEXT NOT NULL,
     example_situation        TEXT NOT NULL,
     example_task             TEXT NOT NULL,
     example_action           TEXT NOT NULL,
     example_result           TEXT NOT NULL,
 );  */
+
