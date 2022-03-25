@@ -35,7 +35,7 @@ const submitEntry = () => {
   .then((response)=> response.json())
   .then((data)=>{
     console.log(data)
-    // navigate("/viewentries")
+    navigate("/viewentries")
   })
 };
 

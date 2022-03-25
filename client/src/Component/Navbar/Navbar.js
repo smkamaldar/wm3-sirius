@@ -6,7 +6,7 @@ import {
     NavMenu,
     NavBtn,
     NavBtnLink,
-  } from "./NavbarElements";
+  } from "./NavBarElements";
 import "../../pages/Home.css";
 import image from "../../assets/Siriuslogo.png";
 
@@ -39,7 +39,7 @@ const Navbar = () => {
           </NavLink>
         </NavMenu>
         <NavBtn>
-          <NavBtnLink to='/register'>Sign In</NavBtnLink>
+          <NavBtnLink to='/signin'>Sign In</NavBtnLink>
         </NavBtn>
 
         </nav>
