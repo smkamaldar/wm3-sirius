@@ -64,21 +64,15 @@ Pool.query (
 						throw error;
 					}
 			
-					console.log(result.rows);
-						req.flash('success_msg', "You are now registered. Please log in", );
-						res.redirect("/users/login")
-						}
-					);
-
+			console.log(result.rows);
+				req.flash('success_msg', "You are now registered. Please log in", );
+				res.redirect("/users/login")
 				}
-
-
-
-			}
-		);
-	}
-
-
+				);
+				}
+				}
+				);
+				}
 })
 
 
