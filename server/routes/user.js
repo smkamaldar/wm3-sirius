@@ -11,22 +11,26 @@ const flash = require ("express-flash");
 
 app.use (flash ());
 
-router.get("/", async (req, res) => {
+router.get("/", async (req, res) => 
+{
 	res.send("users info")
 })
 
 
-router.post("/register", async (req, res) => {
+router.post("/register", async (req, res) =>
+ {
 	res.send("register new user");
 })
 
 
-router.post('/users/register', async  (req, res) => { 
+router.post('/users/register', async  (req, res) => 
+{ 
 	const { name, email, password} = req.body;
 
 let errors = [];
 
-if (!first_name||last_name||!email||!password ||!password2) { 
+if (!first_name||last_name||!email||!password ||!password2) 
+{ 
 	error.push({msg: 'please enter all fields'});
 	}
 
