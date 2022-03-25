@@ -8,7 +8,7 @@ module.exports = merge(common, {
 		historyApiFallback: true,
 		port: 3000,
 		proxy: {
-			"/api": "http://localhost:3100",
+			"/api": "http://localhost:3300",
 		},
 	},
 	mode: "development",

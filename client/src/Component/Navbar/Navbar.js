@@ -23,7 +23,7 @@ const Navbar = () => {
         <NavLink to='/' style={{ padding: "5px", color: "black" }}>
             Home
           </NavLink>
-          <NavLink to='/about'style={{ color: "black" }} activeStyle>
+          <NavLink to='/about'style={{ color: "black" }} >
             About
           </NavLink>
           <NavLink to='/addentry' style={{
@@ -31,15 +31,15 @@ const Navbar = () => {
                     backgroundColor: "rgb(0, 0, 0)",
                     borderRadius: "5px",
                 }}> Add A Star</NavLink>
-          <NavLink to='/contact'style={{ color: "black" }} activeStyle>
+          <NavLink to='/contact'style={{ color: "black" }} >
             Contact Us
           </NavLink>
-          <NavLink to='/signup'style={{ color: "black" }} activeStyle>
+          <NavLink to='/signup'style={{ color: "black" }} >
             Sign Up
           </NavLink>
         </NavMenu>
         <NavBtn>
-          <NavBtnLink to='/register'>Sign In</NavBtnLink>
+          <NavBtnLink to='/signin'>Sign In</NavBtnLink>
         </NavBtn>
 
         </nav>
