@@ -3,10 +3,7 @@ import pool from '../db.js'
 import passport from "passport";
 import bcrypt from "bcrypt";
 
-
 const router = Router();
-
-
 
 router.post("/login",passport.authenticate('local'), (req, res)=>{
     res.json(req.session.passport.user)

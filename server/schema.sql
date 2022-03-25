@@ -21,7 +21,6 @@ CREATE TABLE IF NOT EXISTS stars (
     updated_at           TIMESTAMP  NOT NULL
 );
 
-
 /* CREATE TABLE IF NOT EXISTS examples (
     id                       SERIAL PRIMARY KEY,
     user_id                  INT NOT NULL REFERENCES users(id),
