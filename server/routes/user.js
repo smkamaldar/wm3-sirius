@@ -6,10 +6,9 @@ import app from "../app";
 const router = Router();
 const bcrypt = require("bcrypt");
 
-const flash = require ("express-flash");
 
 
-app.use (flash ());
+
 
 router.get("/", async (req, res) => 
 {

@@ -6,6 +6,8 @@ import initializePassport from "./passport-config.js";
 import passport from "passport";
 import session from "express-session";
 
+const flash = require ("express-flash");
+
 // categorising APIs
 import userRoute from "./routes/user";
 import starRoute from "./routes/star";
@@ -21,6 +23,7 @@ import {
 const staticDir = path.join(__dirname, "static");
 
 const app = express();
+app.use (flash ());
 app.use(session({
 	secret: process.env.SECRET,
 	resave: true,
