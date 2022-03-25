@@ -1,8 +1,10 @@
 import { Pool } from "pg";
 require("dotenv").config();
+import { readFileSync } from "fs";
+import path from "path";
 
 const dbUrl = process.env.DATABASE_URL || "postgres://localhost:5432/sirius";
-
+const sql = readFileSync(path.join(__dirname,"./schema.sql")).toString();
 
 const pool = new Pool({
 	connectionString: dbUrl,
@@ -14,6 +16,7 @@ export const connectDb = async () => {
 	let client;
 	try {
 		client = await pool.connect();
+		await client.query(sql);
 	} catch (err) {
 		console.error(err);
 		process.exit(1);
