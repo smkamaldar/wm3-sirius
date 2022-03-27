@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Home from "./pages/Home";
 import Navbar from "./Component/Navbar/Navbar";
-import Footer from "./Component/Footer";
+import Footer from "./Component/Footer/Footer";
 import AddEntry from "./pages/AddEntry";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
