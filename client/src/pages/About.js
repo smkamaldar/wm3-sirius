@@ -53,11 +53,11 @@ export const About = () => {
 				</Box>
 			</Box>
 
-			<Box component="section" className="section-4">
+			{/* <Box component="section" className="section-4">
 				<Typography variant="h4" className="section-title" color="black">
 					Meet The Team
 				</Typography>
-			</Box>
+			</Box> */}
 		</div>
 	);
 };
