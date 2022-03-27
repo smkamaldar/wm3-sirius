@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Box from "@mui/material/Box";
 import Home from "./pages/Home";
 import Navbar from "./Component/Navbar/Navbar";
 import Footer from "./Component/Footer";
@@ -10,23 +11,21 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import "./index.css";
 
-
-
 const App = () => (
-	<div>
-
-<Navbar />
-	<Routes>
-			<Route path="/" element={<Home />} />
-			<Route path="/addentry" element={<AddEntry />} />
-			<Route path="/viewentries" element={<ViewEntries />} />
-			<Route path="/SignIn" element={<SignIn />} />
-			<Route path="/SignUp" element={<SignUp />} />
-			<Route path="/About" element={<About />} />
-			<Route path="/Contact" element={<Contact />} />
-	</Routes>
-
-	<Footer />
+	<div >
+		<Navbar />
+		<Box className="body">
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/addentry" element={<AddEntry />} />
+				<Route path="/viewentries" element={<ViewEntries />} />
+				<Route path="/SignIn" element={<SignIn />} />
+				<Route path="/SignUp" element={<SignUp />} />
+				<Route path="/About" element={<About />} />
+				<Route path="/Contact" element={<Contact />} />
+			</Routes>
+		</Box>
+		<Footer />
 	</div>
 );
 

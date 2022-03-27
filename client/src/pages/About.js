@@ -1,62 +1,67 @@
-export const About = (props) => {
-    return (
-      <div id="about">
-        <div className="container">
-          <div className="row">
-            <div className="col-xs-12 col-md-6">
-              {" "}
-              <img src="img/about.jpg" className="img-responsive" alt="" />{" "}
-            </div>
-            <div className="col-xs-12 col-md-6">
-              <div className="about-text">
-                <h2>About Us</h2>
-                <p>{props.data ? props.data.paragraph : "loading..."}</p>
-                <h3>Why Choose Us?</h3>
-                <div className="list-style">
-                  <div className="col-lg-6 col-sm-6 col-xs-12">
-                    <ul>
-                      {props.data
-                        ? props.data.Why.map((d, i) => (
-                            <li key={`${d}-${i}`}>{d}</li>
-                          ))
-                        : "loading"}
-                    </ul>
-                  </div>
-                  <div className="col-lg-6 col-sm-6 col-xs-12">
-                    <ul>
-                      {props.data
-                        ? props.data.Why2.map((d, i) => (
-                            <li key={`${d}-${i}`}> {d}</li>
-                          ))
-                        : "loading"}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div id='features' className='text-center'>
-      <div className='container'>
-        <div className='col-md-10 col-md-offset-1 section-title'>
-          <h2>Features</h2>
-        </div>
-        <div className='row'>
-          {props.data
-            ? props.data.map((d, i) => (
-                <div key={`${d.title}-${i}`} className='col-xs-6 col-md-3'>
-                  {""}
-                  <i className={d.icon}></i>
-                  <h3>{d.title}</h3>
-                  <p>{d.text}</p>
-                </div>
-              ))
-            : "Loading..."}
-        </div>
-      </div>
-    </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  };
+import "./About.css";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 
-    export default About;
+
+
+export const About = () => {
+	return (
+		<div>
+			<Box component="section" className="section-1">
+				<Typography variant="h3" className="section-title" color="white">
+					About Sirius
+				</Typography>
+			</Box>
+
+			<Box component="section" className="section-2">
+				<Box className="section-content">
+					<Typography variant="h4" className="section-title" color="black">
+						The STAR Methodology
+					</Typography>
+					<Typography variant="body1" className="section-text" color="black">
+						Lorem ipsum lorem lorem lorem lorem lorem lorem lorem Lorem ipsum
+						lorem lorem lorem lorem lorem lorem lorem Lorem ipsum lorem lorem
+						lorem lorem lorem lorem lorem Lorem ipsum lorem lorem lorem lorem
+					</Typography>
+				</Box>
+				<Box className="section-image">
+					<img
+						className="image-1"
+						src="https://i.ibb.co/wzwmC7w/star.jpg"
+						alt="star method"
+					/>
+				</Box>
+			</Box>
+
+			<Box component="section" className="section-3">
+				<Box className="section-image">
+					<img
+						className="image-1"
+						src="https://i.ibb.co/zZXPss0/features.png"
+						alt="star method"
+					/>
+				</Box>
+				<Box className="section-content">
+					<Typography variant="h4" className="section-title" color="white">
+						Site Features
+					</Typography>
+					<Typography variant="body1" className="section-text" color="white">
+						Lorem ipsum lorem lorem lorem lorem lorem lorem lorem Lorem ipsum
+						lorem lorem lorem lorem lorem lorem lorem Lorem ipsum lorem lorem
+						lorem lorem lorem lorem lorem Lorem ipsum lorem lorem lorem lorem
+					</Typography>
+				</Box>
+			</Box>
+
+			<Box component="section" className="section-4">
+				<Typography variant="h4" className="section-title" color="black">
+					Meet The Team
+				</Typography>
+			</Box>
+		</div>
+	);
+};
+
+export default About;
+
+
