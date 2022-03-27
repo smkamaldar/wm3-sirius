@@ -7,7 +7,7 @@ import AddEntry from "./pages/AddEntry";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import ViewEntries from "./pages/ViewEntries";
-import About from "./pages/About";
+import About from "./pages/About/About";
 import Contact from "./pages/Contact";
 import "./index.css";
 
