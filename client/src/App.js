@@ -8,6 +8,7 @@ import SignUp from "./pages/SignUp";
 import ViewEntries from "./pages/ViewEntries";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import "./index.css";
 
 
 
