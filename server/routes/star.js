@@ -35,7 +35,7 @@ router.get("/:starId", async (req, res) => {
     }
 })
 
-router.post("/", async (req, res) => {
+router.post("/", isAuth, async (req, res) => {
     const { title, competence, situation, task, action, result, image } = req.body;
     // validations
     if (!title || !situation || !task || !action || !result) {
