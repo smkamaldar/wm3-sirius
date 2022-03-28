@@ -43,14 +43,10 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* border-bottom: 1px solid lightgray; */
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
 }
 
 .intro-wrapper p {
 	max-width: 100%;
-	color: white;
 	margin: 0;
 }
 

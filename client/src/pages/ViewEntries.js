@@ -36,42 +36,14 @@ export default function ViewEntries() {
 										flexDirection: "column",
 									}}
 								>
-									<Box
-										className="intro-wrapper chalk"
-										// sx={{
-										// 	backgroundColor: "primary.main",
-										// }}
-									>
-										<Box className="date-wrapper border-right">
-											<Typography
-												variant="body1"
-												className="intro-text details-title"
-											>
-												Created:
-											</Typography>
-											<Typography
-												variant="body1"
-												className="intro-text details-title"
-											>
-												29/03/2022
-											</Typography>
-										</Box>
-
-										<Box className="date-wrapper border-left">
-											<Typography
-												variant="body1"
-												className="intro-text details-title"
-											>
-												Updated:
-											</Typography>
-											<Typography
-												variant="body1"
-												className="intro-text details-title"
-											>
-												08/04/2022
-											</Typography>
-										</Box>
-									</Box>
+									<CardMedia
+										component="img"
+										sx={{
+											height: "8rem",
+										}}
+										image="https://images.unsplash.com/photo-1538045698727-ac45d4365100?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80"
+										alt="random"
+									/>
 
 									<CardContent className="card-content" sx={{ padding: 0 }}>
 										<Box className="outer-wrapper">
@@ -168,6 +140,47 @@ export default function ViewEntries() {
 															}}
 														>
 															lorem lorem lorem
+														</Typography>
+													</Box>
+												</Box>
+
+												<Box
+													className="intro-wrapper"
+													// sx={{
+													// 	backgroundColor: "primary.main",
+													// }}
+												>
+													<Box className="date-wrapper border-right">
+														<Typography
+															color="black"
+															variant="body1"
+															className="intro-text details-title"
+														>
+															Created:
+														</Typography>
+														<Typography
+															color="black"
+															variant="body1"
+															className="intro-text details-title"
+														>
+															29/03/2022
+														</Typography>
+													</Box>
+
+													<Box className="date-wrapper border-left">
+														<Typography
+															color="black"
+															variant="body1"
+															className="intro-text details-title"
+														>
+															Updated:
+														</Typography>
+														<Typography
+															color="black"
+															variant="body1"
+															className="intro-text details-title"
+														>
+															08/04/2022
 														</Typography>
 													</Box>
 												</Box>
