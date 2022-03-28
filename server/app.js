@@ -5,7 +5,7 @@ require('dotenv').config();
 import initializePassport from "./passport-config.js";
 import passport from "passport";
 import session from "express-session";
-
+import cors from "cors";
 const flash = require ("express-flash");
 
 // categorising APIs
@@ -37,7 +37,7 @@ app.use(passport.session())
 app.use(express.json());
 app.use(configuredHelmet());
 app.use(morgan("dev"));
-
+app.use(cors());
 if (app.get("env") === "production") {
 	app.enable("trust proxy");
 	app.use(httpsOnly());

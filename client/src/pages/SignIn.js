@@ -1,5 +1,6 @@
 
 import * as React from 'react';
+import Axios from 'axios';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Container from '@mui/material/Container';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -13,20 +14,46 @@ import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Checkbox from '@mui/material/Checkbox';
+import { useNavigate } from "react-router-dom";
+
 
 
 
 const theme = createTheme();
 
-export default function SignIn() {
+const SignIn= () => {
+  const navigate = useNavigate();
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
+
+
     const handleSubmit = (event) => {
       event.preventDefault();
-      const data = new FormData(event.currentTarget);
-      console.log({
-        email: data.get('email'),
-        password: data.get('password'),
-      });
+      Axios({
+        method: "POST",
+        data: {
+          email: email,
+          password: password
+        },
+        headers: {
+          "Content-Type": "application/json"
+        },
+        withCredentials: true,
+        url: "http://localhost:3300/api/auth/login",
+      }).then((res) => console.log(res))
+        .catch((err) => console.log(err));
+      navigate("/");
     };
+      // Axios.post('http://localhost:3300/api/auth/login', {
+      //   email: email,
+      //   password: password
+      // })
+      // .then((res) => {
+      //   console.log(res);
+      // }) 
+      // .catch((err) => {
+      //   console.log(err);
+
 
     return (
       <ThemeProvider theme={theme}>
@@ -55,7 +82,10 @@ export default function SignIn() {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 autoFocus
+              
               />
               <TextField
                 margin="normal"
@@ -65,6 +95,8 @@ export default function SignIn() {
                 label="Password"
                 type="password"
                 id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 autoComplete="current-password"
               />
               {/* <FormControlLabel
@@ -96,4 +128,6 @@ export default function SignIn() {
         </Container>
       </ThemeProvider>
     );
-  }
+  };
+
+  export default SignIn;
