@@ -10,20 +10,21 @@ import image9 from "../assets/images/9.png";
 import image10 from "../assets/images/10.png";
 import image11 from "../assets/images/11.png";
 
+export const images = {
+    "1.png": image1,
+    "2.png": image2,
+    "3.png": image3,
+    "4.png": image4,
+    "5.png": image5,
+    "6.png": image6,
+    "7.png": image7,
+    "8.png": image8,
+    "9.png": image9,
+    "10.png": image10,
+    "11.png": image11,
+}
 export const getImageByName = (name)=>{
-    const images = {
-        "1.png": image1,
-        "2.png": image2,
-        "3.png": image3,
-        "4.png": image4,
-        "5.png": image5,
-        "6.png": image6,
-        "7.png": image7,
-        "8.png": image8,
-        "9.png": image9,
-        "10.png": image10,
-        "11.png": image11,
-    }
     return images[name]
 }
+
 
