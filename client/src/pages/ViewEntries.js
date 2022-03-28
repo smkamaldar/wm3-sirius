@@ -41,13 +41,17 @@ export default function ViewEntries() {
 								>
 
 									<Box
-										className="intro-wrapper chalk "
+										className="intro-wrapper chalk"
 										// sx={{
 										// 	backgroundColor: "primary.main",
 										// }}
 									>
-										<Typography variant="body1" className="intro-text">
-											lorem ipsum blah blah blah blah blah blah blah
+										<Typography variant="body1" className="intro-text details-title">
+											Created:
+										</Typography>
+
+                    <Typography variant="body1" className="intro-text details-title">
+											Updated:
 										</Typography>
 									</Box>
 
@@ -150,7 +154,7 @@ export default function ViewEntries() {
 													</Box>
 												</Box>
 
-												<Box className=" star-row star-row-last">
+												{/* <Box className=" star-row star-row-last">
 													<Box
 														className="star-step star-wrap chalk"
 														// sx={{
@@ -167,7 +171,7 @@ export default function ViewEntries() {
 													<Box className="star-answer star-tags">
 														<p>x tag</p> <p>x tag</p> <p>x tag</p>
 													</Box>
-												</Box>
+												</Box> */}
 											</Box>
 										</Box>
 									</CardContent>
