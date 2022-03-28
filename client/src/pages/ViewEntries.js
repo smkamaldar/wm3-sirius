@@ -19,14 +19,11 @@ export default function ViewEntries() {
 	return (
 		<ThemeProvider theme={theme}>
 			<Box component="main">
-
-
-      <Box component="section" className="section-1">
-				<Typography variant="h3" className="section-title" color="white">
-					Star Entries
-				</Typography>
-			</Box>
-
+				<Box component="section" className="section-1">
+					<Typography variant="h3" className="section-title" color="white">
+						Star Entries
+					</Typography>
+				</Box>
 
 				<Container className="grid-wrapper" maxWidth="md">
 					<Grid container spacing={4}>
@@ -39,20 +36,41 @@ export default function ViewEntries() {
 										flexDirection: "column",
 									}}
 								>
-
 									<Box
 										className="intro-wrapper chalk"
 										// sx={{
 										// 	backgroundColor: "primary.main",
 										// }}
 									>
-										<Typography variant="body1" className="intro-text details-title">
-											Created:
-										</Typography>
+										<Box className="date-wrapper border-right">
+											<Typography
+												variant="body1"
+												className="intro-text details-title"
+											>
+												Created:
+											</Typography>
+											<Typography
+												variant="body1"
+												className="intro-text details-title"
+											>
+												29/03/2022
+											</Typography>
+										</Box>
 
-                    <Typography variant="body1" className="intro-text details-title">
-											Updated:
-										</Typography>
+										<Box className="date-wrapper border-left">
+											<Typography
+												variant="body1"
+												className="intro-text details-title"
+											>
+												Updated:
+											</Typography>
+											<Typography
+												variant="body1"
+												className="intro-text details-title"
+											>
+												08/04/2022
+											</Typography>
+										</Box>
 									</Box>
 
 									<CardContent className="card-content" sx={{ padding: 0 }}>
@@ -177,9 +195,8 @@ export default function ViewEntries() {
 									</CardContent>
 
 									<CardActions className="buttons-wrapper">
-                    <ShareButton />
+										<ShareButton />
 									</CardActions>
-
 								</Card>
 							</Grid>
 						))}

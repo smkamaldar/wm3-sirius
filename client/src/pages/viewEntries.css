@@ -38,10 +38,6 @@
 
 /*  STAR-UI */
 
-.outer-wrapper {
-	border: 1px solid lightgray;
-}
-
 .intro-wrapper {
 	min-height: 3.2rem;
 	display: flex;
@@ -68,15 +64,12 @@
 	background-color: white;
 }
 
-.star-row-last {
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-}
+
 
 .star-step {
 	width: 20%;
 	min-width: 70px;
-	border-bottom: 1px solid lightgray;
+	border-top: 1px solid lightgray;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -124,5 +117,21 @@ p {
 }
 
 .details-title{
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
 }
+
+.date-wrapper{
+    /* border: 1px solid grey; */
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+}
+
+.border-right{
+    border-right: 1px solid grey;
+}
+
+.border-left{
+ border-left: 1px solid grey;
+}
+
