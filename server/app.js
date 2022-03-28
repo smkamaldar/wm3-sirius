@@ -6,7 +6,6 @@ import initializePassport from "./passport-config.js";
 import passport from "passport";
 import session from "express-session";
 import cors from "cors";
-const flash = require ("express-flash");
 
 // categorising APIs
 import userRoute from "./routes/user";
@@ -23,7 +22,6 @@ import {
 const staticDir = path.join(__dirname, "static");
 
 const app = express();
-app.use (flash ());
 app.use(session({
 	secret: process.env.SECRET,
 	resave: true,
@@ -31,8 +29,8 @@ app.use(session({
 }))
 initializePassport(passport);
 // everytime we load routes they run
-app.use(passport.initialize())
-app.use(passport.session())
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(express.json());
 app.use(configuredHelmet());

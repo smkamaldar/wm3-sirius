@@ -44,16 +44,6 @@ const SignIn= () => {
         .catch((err) => console.log(err));
       navigate("/");
     };
-      // Axios.post('http://localhost:3300/api/auth/login', {
-      //   email: email,
-      //   password: password
-      // })
-      // .then((res) => {
-      //   console.log(res);
-      // }) 
-      // .catch((err) => {
-      //   console.log(err);
-
 
     return (
       <ThemeProvider theme={theme}>
@@ -85,7 +75,6 @@ const SignIn= () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 autoFocus
-              
               />
               <TextField
                 margin="normal"
