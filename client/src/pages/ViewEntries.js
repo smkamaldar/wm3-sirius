@@ -15,6 +15,7 @@ const theme = createTheme();
 
 export default function ViewEntries() {
 
+
 	const [stars, setStars] = useState([]);
 
 	useEffect(() => {
@@ -40,17 +41,16 @@ export default function ViewEntries() {
 										component="img"
 										sx={{
 											height: "50%",
-											// 16:9
-											// pt: '56.25%',
+
 										}}
 										image={getImageByName(star.image)}
 										alt="random"
 									/>
 									<CardContent sx={{ flexGrow: 1 }}>
-										<Typography gutterBottom variant="h5" component="h2">
+										<Typography gutterBottom variant="h5" component="h2" color="common.black">
 											{star.title}
 										</Typography>
-										<Typography>{star.competence}</Typography>
+										<Typography color="common.black">{star.competence}</Typography>
 									</CardContent>
 									<CardActions>
 										<Button size="small">View</Button>
