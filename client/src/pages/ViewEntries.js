@@ -8,12 +8,13 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { getImageByName } from "../utils/image.js";
 
+import { getImageByName } from "../utils/image.js";
 
 const theme = createTheme();
 
 export default function ViewEntries() {
+
 	const [stars, setStars] = useState([]);
 
 	useEffect(() => {
