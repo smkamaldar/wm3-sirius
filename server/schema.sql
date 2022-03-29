@@ -36,4 +36,4 @@ CREATE TABLE IF NOT EXISTS stars (
 
 -- altering stars table
 ALTER TABLE stars 
-ADD COLUMN image TEXT;
+ADD COLUMN IF NOT EXISTS image TEXT;
