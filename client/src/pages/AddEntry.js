@@ -128,12 +128,12 @@ const AddEntry = () => {
 						value={result}
 						onChange={(e) => setResult(e.target.value)}
 					/>
-          <div>
-					<Button onClick={() => setIsImageModalOpen(true)}>
-						Select a photo
-					</Button>
-          {image && <span>{`${image} selected.`}</span>}
-          </div>
+					<div>
+						<Button onClick={() => setIsImageModalOpen(true)}>
+							Select a photo
+						</Button>
+						{image && <span>{`${image} selected.`}</span>}
+					</div>
 					<ImageModal
 						open={isImageModalOpen}
 						onClose={() => setIsImageModalOpen(false)}
@@ -146,11 +146,12 @@ const AddEntry = () => {
 			</div>
 
 			<div className="button-wrapper">
-      <Button
+				<Button
 					onClick={() => navigate("/")}
 					variant="outlined"
 					color="primary"
-				>Cancel
+				>
+					Cancel
 				</Button>
 				<Button
 					onClick={submitEntry}
@@ -163,7 +164,6 @@ const AddEntry = () => {
 				>
 					Submit
 				</Button>
-		
 			</div>
 		</main>
 	);
