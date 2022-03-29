@@ -95,7 +95,7 @@ router.put("/:starId", isAuth, async (req, res) => {
         }
 
         star = star.rows[0];
-      
+
         // creating values for updating the record
         const values = [];
         values.push(title || star.title);
