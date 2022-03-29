@@ -16,7 +16,7 @@ const App = () => (
 		<Navbar />
 		<Box className="body">
 			<Routes>
-				<Route path="/" element={<Home />} />
+				<Route path="/" element={<SignIn />} />
 				<Route path="/addentry" element={<AddEntry />} />
 				<Route path="/viewentries" element={<ViewEntries />} />
 				<Route path="/SignIn" element={<SignIn />} />
