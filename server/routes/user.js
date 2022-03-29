@@ -7,12 +7,9 @@ const router = Router();
 const bcrypt = require("bcrypt");
 
 
-
-
-
-router.get("/", async (req, res) => 
+router.get("/", async (req, res) =>
 {
-	res.send("users info")
+	res.send("users info");
 })
 
 
@@ -22,13 +19,13 @@ router.post("/register", async (req, res) =>
 })
 
 
-router.post('/users/register', async  (req, res) => 
+router.post('/users/register', async  (req, res) =>
 { 
-	const { first_name, last_name, email, password} = req.body;
+	const { first_name, last_name, email, password } = req.body;
 
 let errors = [];
 
-if (!first_name||last_name||!email||!password ||!password2) 
+if (!first_name||last_name||!email||!password ||!password2)
 { 
 	error.push({msg: 'please enter all fields'});
 	}
@@ -48,7 +45,6 @@ if(errors.length > 0) {
 		
 let hashedPassword  = await bcrypt.hash(password, 10);
 
-
 Pool.query (
 	`SELECT * FROM users WHERE email = $1`, [email], (error, results)=> {
 	if (error){
@@ -58,14 +54,14 @@ Pool.query (
 
 	if(results.rows.length > 0){
 		errors.push({msg: "Email already registered"});
-		res.render('register', {errors});
+		res.render('register', { errors });
 	}else {
 			Pool. query (
 				`INSERT INTO user (first_name, last_name, email, password) VALUE($1, $2, $3, $4)RETURNING id, password`, [first_name, last_name, email, hashedPassword], (error, results) =>
-				{
+			    {
 					if (error){
-						throw error;
-					}
+								throw error;
+							  }
 			
 			console.log(result.rows);
 				req.flash('success_msg', "You are now registered. Please log in", );

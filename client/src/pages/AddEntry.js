@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import "./Home.css";
+import SignIn from "./SignIn";
 
 
 
@@ -37,7 +38,13 @@ const submitEntry = () => {
     console.log(data)
     navigate("/viewentries")
   })
+  alert("entry submitted successfully");
 };
+
+const handleGuestClick = () => {
+  alert ("Please sign in, to add a Star entry");
+  navigate("/signin")
+}
 
 return (
 	<main className="main">
@@ -123,6 +130,7 @@ return (
 
 	<Button
    onClick={submitEntry}
+   onClick ={handleGuestClick}
     style={{
     color: "white",
     backgroundColor: "rgb(0, 0, 0)",
