@@ -35,10 +35,10 @@ export default function ViewEntries() {
                   alt="random"
                 />
                 <CardContent sx={{ flexGrow: 1 }}>
-                  <Typography gutterBottom variant="h5" component="h2">
+                  <Typography gutterBottom variant="h5" component="h2"color="common.black">
                     STAR
                   </Typography>
-                  <Typography>
+                  <Typography color="common.black">
                     This is a media card. You can use this section to describe the
                     content.
                   </Typography>
