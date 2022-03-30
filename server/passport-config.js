@@ -29,6 +29,7 @@ const initializePassport = (passport) => {
     // when we need to grab the user from session.
     passport.deserializeUser(async (id, done) => {
         try {
+
             const result = await pool.query('SELECT id, first_name, last_name, email FROM users WHERE id = $1', [id])
             const user = result.rows[0];
             if (user) {

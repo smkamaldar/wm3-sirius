@@ -35,12 +35,7 @@ app.use(passport.session());
 app.use(express.json());
 app.use(configuredHelmet());
 app.use(morgan("dev"));
-app.use(cors(
-	{
-		origin: "http://localhost:3000",
-		credentials: true,
-	}
-));
+app.use(cors());
 if (app.get("env") === "production") {
 	app.enable("trust proxy");
 	app.use(httpsOnly());
