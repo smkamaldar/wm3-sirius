@@ -17,9 +17,7 @@ const App = () => (
 		<Box className="body">
 			<Routes>
 				<Route path="/" element={<Home />} />
-				{/* Public route */}
-				{/* Private route */}
-
+				<Route path="/" element={<SignIn />} />
 				<Route path="/addentry" element={<AddEntry />} />
 				<Route path="/viewentries" element={<ViewEntries />} />
 				<Route path="/SignIn" element={<SignIn />} />

@@ -34,3 +34,6 @@ CREATE TABLE IF NOT EXISTS stars (
     example_result           TEXT NOT NULL,
 );  */
 
+-- altering stars table
+ALTER TABLE stars 
+ADD COLUMN IF NOT EXISTS image TEXT;
