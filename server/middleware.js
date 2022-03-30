@@ -10,9 +10,12 @@ export const configuredHelmet = () =>
 				objectSrc: ["'none'"],
 				scriptSrc: ["'self'", "unpkg.com", "polyfill.io"],
 				styleSrc: ["'self'", "https: 'unsafe-inline'"],
+				imgSrc: ["'self'", "data:", "i.ibb.co"],
 				upgradeInsecureRequests: [],
 			},
 		},
+		crossOriginEmbedderPolicy: false,
+
 	});
 
 export const httpsOnly = () => (req, res, next) => {
