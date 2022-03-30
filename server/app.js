@@ -5,8 +5,7 @@ require('dotenv').config();
 import initializePassport from "./passport-config.js";
 import passport from "passport";
 import session from "express-session";
-
-const flash = require ("express-flash");
+import cors from "cors";
 
 // categorising APIs
 import userRoute from "./routes/user";
@@ -23,7 +22,6 @@ import {
 const staticDir = path.join(__dirname, "static");
 
 const app = express();
-app.use (flash ());
 app.use(session({
 	secret: process.env.SECRET,
 	resave: true,
@@ -31,13 +29,13 @@ app.use(session({
 }))
 initializePassport(passport);
 // everytime we load routes they run
-app.use(passport.initialize())
-app.use(passport.session())
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(express.json());
 app.use(configuredHelmet());
 app.use(morgan("dev"));
-
+app.use(cors());
 if (app.get("env") === "production") {
 	app.enable("trust proxy");
 	app.use(httpsOnly());

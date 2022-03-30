@@ -8,7 +8,7 @@ const router = Router();
 router.get("/", async (req, res) => {
 
     try {
-        const stars = await pool.query("SELECT id, title, competence, situation, task, action, result, created_at, updated_at FROM stars");
+        const stars = await pool.query("SELECT id, title, competence, situation, task, action, result, image, created_at, updated_at FROM stars");
         res.status(200).json(stars.rows);
     } catch (error) {
         res.status(500).json(error);
@@ -35,8 +35,8 @@ router.get("/:starId", async (req, res) => {
     }
 })
 
-router.post("/", async (req, res) => {
-    const { title, competence, situation, task, action, result } = req.body;
+router.post("/", isAuth, async (req, res) => {
+    const { title, competence, situation, task, action, result, image } = req.body;
     // validations
     if (!title || !situation || !task || !action || !result) {
         return res.status(400).json({ msg: "please provide mandatory fields", status: "error" })
@@ -44,11 +44,11 @@ router.post("/", async (req, res) => {
 
     try {
         const currentDate = new Date();
-        const values = [title, competence, situation, task, action, result, currentDate, currentDate];
+        const values = [title, competence, situation, task, action, result, image, currentDate, currentDate];
         const userId = req.session.passport?.user;
         values.push(userId);
 
-        const star = await pool.query("INSERT INTO stars (title, competence, situation, task, action, result, created_at, updated_at, user_id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *", values);
+        const star = await pool.query("INSERT INTO stars (title, competence, situation, task, action, result, image, created_at, updated_at, user_id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *", values);
         res.status(200).json(star.rows[0]);
     } catch (error) {
         console.log(error)
@@ -80,7 +80,7 @@ router.delete("/:starId", isAuth, async (req, res) => {
 
 router.put("/:starId", isAuth, async (req, res) => {
     const { starId } = req.params
-    const { title, situation, task, action, result } = req.body;
+    const { title, situation, task, action, result, image } = req.body;
 
     // validations
     if (isNaN(starId)) {
@@ -95,7 +95,7 @@ router.put("/:starId", isAuth, async (req, res) => {
         }
 
         star = star.rows[0];
-      
+
         // creating values for updating the record
         const values = [];
         values.push(title || star.title);
@@ -103,10 +103,11 @@ router.put("/:starId", isAuth, async (req, res) => {
         values.push(task || star.task);
         values.push(action || star.action);
         values.push(result || star.result);
+        values.push(image || star.image);
         values.push(new Date());
         values.push(starId);
 
-        const updateStar = await pool.query("UPDATE stars SET title = $1, situation = $2, task = $3, action = $4, result = $5, updated_at = $6 WHERE id = $7 RETURNING *", values);
+        const updateStar = await pool.query("UPDATE stars SET title = $1, situation = $2, task = $3, action = $4, result = $5, image = $6, updated_at = $7 WHERE id = $8 RETURNING *", values);
         res.status(200).json(updateStar.rows[0]);
     } catch (error) {
         res.status(500).json(error);
