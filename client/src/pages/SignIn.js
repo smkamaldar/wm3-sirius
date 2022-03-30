@@ -1,5 +1,4 @@
-
-import * as React from 'react';
+import { useRef, useState, useEffect } from 'react';
 import Axios from 'axios';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Container from '@mui/material/Container';
@@ -14,36 +13,68 @@ import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Checkbox from '@mui/material/Checkbox';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import useAuth from '../hooks/useAuth';
 
 
 
 
 const theme = createTheme();
-
+const URL = "/api/auth/login";
 const SignIn= () => {
+  const setAuth = useAuth();
   const navigate = useNavigate();
-  const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
+  const location = useLocation(); 
+
+  const userRef = useRef();
+  const errRef = useRef(); 
 
 
-    const handleSubmit = (event) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errMsg, setErrMsg] = useState('');
+
+
+
+
+  useEffect(() => {
+    setErrMsg("");
+  }, [email, password]);
+
+
+    const handleSubmit = async (event) => {
       event.preventDefault();
-      Axios({
-        method: "POST",
-        data: {
-          email: email,
-          password: password
-        },
-        headers: {
-          "Content-Type": "application/json"
-        },
-        withCredentials: true,
-        url: "http://localhost:3300/api/auth/login",
-      }).then((res) => console.log(res))
-        .catch((err) => console.log(err));
-      navigate("/");
+      try {
+        const response = await Axios.post(URL,
+        JSON.stringify({ email, password }),
+        {
+          headers: { 'Content-Type': 'application/json' },
+          withCredentials: true
+        });
+        console.log(JSON.stringify(response.data));
+        if ( response.status === 200 ) {
+          setAuth(response.data);
+        setEmail('');
+        setPassword('');
+        navigate("/viewEntries");
+        } else {
+          setErrMsg("Invalid email or password");
+        }
+        
+      } catch (err) {
+        if (!err?.response) {
+          setErrMsg("Network Error");
+        } else if (response.status === 401) {
+          setErrMsg("Invalid username or password");
+        } else if (err.response.status === 400) {
+          setErrMsg("Missing credentials");
+        } else {
+          setErrMsg("Login failed");
+        }
+      }
     };
+
+  
 
     return (
       <ThemeProvider theme={theme}>
