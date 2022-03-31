@@ -9,14 +9,12 @@ import
 
 export default function ShareStar ()
  { 
-    render () { 
         const shareUrl = 'https://siriuswm3.herokuapp.com/'
         return (
             <div>
                 <LinkedinShareButton url = {shareUrl}  >
-                <LinkedinIcon size {40} square ={true} />
+                <LinkedinIcon size = {40} square ={true} />
                 </LinkedinShareButton>
          </div>
         ); 
     }
-}
