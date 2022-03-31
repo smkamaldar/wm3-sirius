@@ -1,25 +1,26 @@
 
+import { NavLink } from "../Navbar/NavBarElements";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import Link from "@mui/material/Link";
+// import Link from "@mui/material/Link";
 import "./footer.css";
 
 export default function Footer() {
 	return (
 		<footer>
 			<Box className="links-wrapper">
-				<Link className="footer-link" href="#" underline="hover" color="black">
+				<NavLink to="/signin"  className="footer-link" >
 					Log In
-				</Link>
-				<Link className="footer-link" href="#" underline="hover" color="black">
+				</NavLink>
+				<NavLink to="/signup" style={{ color: "black" }} className="footer-link">
 					Sign Up
-				</Link>
-				<Link className="footer-link" href="#" underline="hover" color="black">
+				</NavLink>
+				<NavLink to="/contact" style={{ color: "black" }} className="footer-link">
 					Contact
-				</Link>
-				<Link className="footer-link" href="#" underline="hover" color="black">
+				</NavLink>
+				<NavLink to="/about" style={{ color: "black" }} className="footer-link">
 					About
-				</Link>
+				</NavLink>
 			</Box>
 			<Box>
 				<Typography textAlign="center" color="black">
