@@ -58,7 +58,7 @@ export default function ViewEntries() {
 										</Typography>
 									</CardContent>
 									<CardActions>
-										<Button size="small"
+										<Button size="small" 
 											onClick={() => navigate(`/stars/${star.id}`)}
 											color="primary"
 											variant="contained"
