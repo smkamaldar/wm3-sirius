@@ -11,6 +11,9 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import { getImageByName } from "../utils/image.js";
 
+import ShareStar from "./ShareStar";
+
+
 const theme = createTheme();
 
 export default function ViewEntries() {
@@ -54,7 +57,7 @@ export default function ViewEntries() {
 									</CardContent>
 									<CardActions>
 										<Button size="small">View</Button>
-										<Button size="small">Share</Button>
+										<ShareStar/>
 									</CardActions>
 								</Card>
 							</Grid>

@@ -1,4 +1,4 @@
-//import React, { component } from "react";
+import React, { component } from "react";
 import Button from "@mui/material/Button";
 
 import 
@@ -17,4 +17,4 @@ export default function ShareStar ()
                 </LinkedinShareButton>
          </div>
         ); 
-    }
+} 
