@@ -22,7 +22,7 @@ import useAuth from '../hooks/useAuth';
 const theme = createTheme();
 const URL = "/api/auth/login";
 const SignIn= () => {
-  const setAuth = useAuth();
+  const { setAuth } = useAuth();
   const navigate = useNavigate();
   const location = useLocation(); 
 
