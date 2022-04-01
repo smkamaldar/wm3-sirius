@@ -101,6 +101,18 @@
 	gap: 1rem;
 }
 
+.card-intro-wrapper{
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	padding: 1.2rem;
+}
+
+.success-msg {
+	display: flex;
+	justify-content: center;
+}
+
 @media screen and (min-width: 700px) {
 	.contact-card {
 		width: 50%;
