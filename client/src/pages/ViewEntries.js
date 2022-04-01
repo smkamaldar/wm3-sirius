@@ -8,14 +8,13 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-
+import { useNavigate } from "react-router-dom";
 import { getImageByName } from "../utils/image.js";
 
 const theme = createTheme();
 
 export default function ViewEntries() {
-
-
+	const navigate = useNavigate();
 	const [stars, setStars] = useState([]);
 
 	useEffect(() => {
@@ -41,19 +40,33 @@ export default function ViewEntries() {
 										component="img"
 										sx={{
 											height: "50%",
-
 										}}
 										image={getImageByName(star.image)}
 										alt="random"
 									/>
 									<CardContent sx={{ flexGrow: 1 }}>
-										<Typography gutterBottom variant="h5" component="h2" color="common.black">
+										<Typography
+											gutterBottom
+											variant="h5"
+											component="h2"
+											color="common.black"
+										>
 											{star.title}
 										</Typography>
-										<Typography color="common.black">{star.competence}</Typography>
+										<Typography color="common.black">
+											{star.competence}
+										</Typography>
 									</CardContent>
 									<CardActions>
-										<Button size="small">View</Button>
+										<Button size="small"
+											onClick={() => navigate(`/stars/${star.id}`)}
+											color="primary"
+											variant="contained"
+											sx={{
+												marginRight: "auto",
+											}}
+						
+										>View</Button>
 										<Button size="small">Share</Button>
 									</CardActions>
 								</Card>
