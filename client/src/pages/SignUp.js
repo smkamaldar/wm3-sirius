@@ -17,7 +17,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from "react-router-dom";
 
 const theme = createTheme();
-
+const URL = "/api/user/register";
 const SignUp= () => {
   const navigate = useNavigate();
   const [email, setEmail] = React.useState("");
@@ -29,7 +29,7 @@ const SignUp= () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    Axios.post('http://localhost:3300/api/user/register', {
+    Axios.post(URL , {
       email,
       password,
       firstName,
