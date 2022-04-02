@@ -10,12 +10,30 @@ import Button from "@mui/material/Button";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
 import { getImageByName } from "../utils/image.js";
+import SingeStarPage from "./SingleStarPage";
+import ShareStar from "./ShareStar";
+import { Axios } from "axios";
+
 
 const theme = createTheme();
 
 export default function ViewEntries() {
 	const navigate = useNavigate();
 	const [stars, setStars] = useState([]);
+
+	const ViewEntryHandler = () => {
+		Axios.get("/api/starId")
+			.then((response) => {
+				if (response.status === 200) {
+					navigate("/SingleStarPage", {
+						state: {
+							starId: response.data,
+						},
+					});
+				}
+			})
+	};
+
 
 	useEffect(() => {
 		fetch("/api/stars")
@@ -58,16 +76,10 @@ export default function ViewEntries() {
 										</Typography>
 									</CardContent>
 									<CardActions>
-										<Button size="small" 
-											onClick={() => navigate(`/stars/${star.id}`)}
-											color="primary"
-											variant="contained"
-											sx={{
-												marginRight: "auto",
-											}}
-						
-										>View</Button>
-										<Button size="small">Share</Button>
+										<Button 
+										onClick={ViewEntryHandler}
+										size="small">View</Button>
+										<ShareStar/>
 									</CardActions>
 								</Card>
 							</Grid>

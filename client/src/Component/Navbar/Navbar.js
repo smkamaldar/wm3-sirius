@@ -1,9 +1,31 @@
 import React from "react";
-import { NavLink, Bars, NavMenu, NavBtn, NavBtnLink } from "./NavBarElements";
+import {
+    NavLink,
+    Bars,
+    NavMenu,
+    NavBtn,
+    NavBtnLink,
+	NavBtnLogout
+  } from "./NavBarElements";
+  import useAuth from '../../hooks/useAuth';
 import "../../pages/Home.css";
 import image from "../../assets/Siriuslogo.png";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+	const {auth, setAuth} = useAuth();
+	const navigate = useNavigate();
+	const handleLogout = ()=>{
+		fetch("/api/auth/logout",{
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+		})
+		.then(response => response.json() )
+		.then(data => {
+			setAuth(0);
+			navigate("/signin");
+		})
+	}
 	return (
 		<nav className="navbar navbar-expand-lg navbar-light bg-light">
 			<NavLink to="/" className="logo">
@@ -36,7 +58,7 @@ const Navbar = () => {
 				</NavLink>
 			</NavMenu>
 			<NavBtn>
-				<NavBtnLink to="/signin">Sign In</NavBtnLink>
+				{auth ? <NavBtnLogout onClick={handleLogout}>log out</ NavBtnLogout> : <NavBtnLink to="/signin">Sign In</NavBtnLink>}
 			</NavBtn>
 		</nav>
 	);
