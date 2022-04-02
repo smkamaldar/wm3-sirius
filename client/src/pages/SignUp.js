@@ -61,7 +61,7 @@ const SignUp= () => {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 1, bgcolor: 'secondary.black' }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5" color="common.black" >
@@ -125,6 +125,7 @@ const SignUp= () => {
               </Grid>
             </Grid>
             <Button
+              style={{ backgroundColor: 'black', color: 'common.white' }}
               type="submit"
               fullWidth
               variant="contained"

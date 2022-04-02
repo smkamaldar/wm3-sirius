@@ -52,7 +52,7 @@ export const Contact = () => {
 				<CardContent sx={{ padding: "1.5rem" }} className="contact-">
 					<Box className="card-intro-wrapper">
 						<Typography className="contact-title" variant="h5" color="black">
-							Contact Us ...
+							Contact Us
 						</Typography>
 						<Typography
 							className="contact-subtitle"

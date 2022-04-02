@@ -3,3 +3,43 @@
     justify-content: space-around;
     margin: 15px 0;
 }
+
+/* Entry Form */
+.main {
+	width: 65%;
+	margin: 0 auto;
+	margin-top: 2rem;
+	align-self: center;
+}
+
+.entryTitle {
+	margin-top: 3rem;
+}
+
+.entryForm {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.entryTitle h1 {
+	font-size: 2em;
+	padding: 3rem 0 2rem;
+	text-align: center;
+	color: var(--pink);
+}
+
+.entryForm h2 {
+	font-size: 1.5em;
+	color: var(--pink);
+	margin-bottom: 8px;
+}
+
+.buttons-wrapper {
+	display: flex;
+	justify-content: center;
+	gap: 2rem;
+	padding-bottom: 3rem;
+	margin: 2rem 0 8rem;
+}

@@ -10,7 +10,6 @@ import Button from "@mui/material/Button";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
 import { getImageByName } from "../utils/image.js";
-import SingeStarPage from "./SingleStarPage";
 import ShareStar from "./ShareStar";
 import { Axios } from "axios";
 
