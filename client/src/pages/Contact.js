@@ -16,33 +16,17 @@ const Result = () => {
 	return <Typography color="black">Message sent successfully!</Typography>;
 };
 
-// const initialState = {
-// 	name: "",
-// 	email: "",
-// 	message: "",
-// };
-
 export const Contact = () => {
-	// const [{ name, email, message }, setState] = useState(initialState);
 
-	// const handleChange = (e) => {
-	// 	const { name, value } = e.target;
-	// 	setState((prevState) => ({ ...prevState, [name]: value }));
-	// };
-
-	// const clearState = () => setState({ ...initialState });
-
-	const [result, showResult] = useState(false);
+  const [result, showResult] = useState(false);
 
 	const sendEmail = (e) => {
 		e.preventDefault();
-		// console.log(name, email, message);
 		emailjs
 			.sendForm("gmail", "template_qnyu6pp", e.target, "ypobPy9eMdN67GSip")
 			.then(
 				(result) => {
 					console.log(result.text);
-					// clearState();
 				},
 				(error) => {
 					console.log(error.text);
@@ -90,7 +74,6 @@ export const Contact = () => {
 									placeholder="Enter Full Name"
 									fullWidth
 									required
-									// onChange={handleChange}
 								/>
 							</Grid>
 							<Grid xs={12} item>
@@ -103,7 +86,6 @@ export const Contact = () => {
 									placeholder="Enter Email"
 									fullWidth
 									required
-									// onChange={handleChange}
 								/>
 							</Grid>
 							<Grid xs={12} item>
@@ -117,7 +99,6 @@ export const Contact = () => {
 									rows={4}
 									fullWidth
 									required
-									// onChange={handleChange}
 								/>
 							</Grid>
 							<Grid xs={12} item className="button-wrapper">
