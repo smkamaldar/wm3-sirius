@@ -4,7 +4,6 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import ImageModal from "../Component/ImageModal/ImageModal";
-import "./Home.css";
 import "./addEntry.css";
 
 const AddEntry = () => {
@@ -50,11 +49,11 @@ const AddEntry = () => {
 
 	return (
 		<main className="main">
-			<div className="EntryTitle">
+			<div className="entryTitle">
 				<h1>Add A Star</h1>
 			</div>
 
-			<div className="EntryForm">
+			<div className="entryForm">
 				<Box
 					className="Form"
 					component="form"

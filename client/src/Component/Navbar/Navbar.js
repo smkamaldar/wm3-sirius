@@ -32,7 +32,7 @@ const Navbar = () => {
 				<img src={image} height={100} width={100} alt="Logo" />
 			</NavLink>
 			<Bars />
-			<NavMenu>
+			<NavMenu className="navbar-menu">
 				<NavLink to="/" style={{ padding: "5px", color: "black" }}>
 					Home
 				</NavLink>
@@ -42,9 +42,7 @@ const Navbar = () => {
 				<NavLink
 					to="/addentry"
 					style={{
-						color: "white",
-						backgroundColor: "rgb(0, 0, 0)",
-						borderRadius: "5px",
+					color: "black"
 					}}
 				>
 					{" "}
@@ -58,7 +56,12 @@ const Navbar = () => {
 				</NavLink>
 			</NavMenu>
 			<NavBtn>
-				{auth ? <NavBtnLogout onClick={handleLogout}>log out</ NavBtnLogout> : <NavBtnLink to="/signin">Sign In</NavBtnLink>}
+				{auth ? <NavBtnLogout onClick={handleLogout}>log out</ NavBtnLogout> : <NavBtnLink
+				style={{
+					background: "black",
+					color: "white",
+				}}
+				to="/signin">Sign In</NavBtnLink>}
 			</NavBtn>
 		</nav>
 	);

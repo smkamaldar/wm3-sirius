@@ -20,93 +20,10 @@
 	padding: 0.5rem;
 }
 
-.navbar a:hover {
-	background-color: var(--pink);
-}
-
-.logo {
-	border-radius: 10px;
-}
-
-.logo:hover {
-	background-color: transparent !important;
-	box-shadow: var(--box-shadow);
-}
-
-/* Entry Form */
-.main {
-	width: 65%;
-	margin: 0 auto;
-	margin-top: 2rem;
-	align-self: center;
-	box-shadow: var(--box-shadow);
+.navbar-menu a:hover {
+	border: 1px solid var(--pink);
+	border-radius: 5px;
 }
 
 
-.entryTitle {
-	margin-top: 3rem;
-}
 
-.entryForm {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-}
-
-.entryTitle h1 {
-	font-size: 2em;
-	padding: 3rem 0 2rem;
-	text-align: center;
-	color: rgb(192, 115, 115);
-}
-
-.main:hover {
-	box-shadow: 1px 3px 5px rgb(0, 0, 0, 0.1);
-}
-
-.EntryForm h2 {
-	font-size: 20px;
-	color: rgb(192, 115, 115);
-	margin-bottom: 8px;
-}
-
-.contact-card {
-	width: 80%;
-	box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-		rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-}
-
-.button-wrapper {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-
-.contact-main {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	gap: 1rem;
-}
-
-.card-intro-wrapper{
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
-	padding: 1.2rem;
-}
-
-.success-msg {
-	display: flex;
-	justify-content: center;
-}
-
-@media screen and (min-width: 700px) {
-	.contact-card {
-		width: 50%;
-	}
-}

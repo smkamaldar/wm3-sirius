@@ -44,13 +44,23 @@ export function Home() {
               justifyContent="center"
             >
 
-              <Button href="/addentry" style={{
+              <Button 
+              className="home-button"
+              href="/addentry" style={{
+                    fontFamily: "QuickSand",
                     color: "white",
                     backgroundColor: "rgb(0, 0, 0)",
                     borderRadius: "5px",
-                }}variant="contained">
+                }}>
 					Add A Star</Button>
-              <Button href="/viewentries" variant="outlined">View Entries</Button>
+              <Button
+              style={{
+                    fontFamily: "QuickSand",
+                    color: "black",
+                    border: "1px solid var(--pink)",
+              }}
+              className="home-button" 
+              href="/viewentries" >View Stars</Button>
             </Stack>
           </Container>
         </Box>
