@@ -30,7 +30,6 @@ const style = {
   };
 
 export default function ViewEntries() {
-	// const navigate = useNavigate();
 	const [show, setShow] = useState(false);
 
 	const handleClose = () => setShow(false);
