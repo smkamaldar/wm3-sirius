@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Container from "@mui/material/Container";
+import Modal from "@mui/material/Modal";
+import Box from "@mui/material/Box";
+
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -11,27 +14,29 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
 import { getImageByName } from "../utils/image.js";
 import ShareStar from "./ShareStar";
-import { Axios } from "axios";
-
 
 const theme = createTheme();
 
-export default function ViewEntries() {
-	const navigate = useNavigate();
-	const [stars, setStars] = useState([]);
+const style = {
+	position: 'absolute',
+	top: '50%',
+	left: '50%',
+	transform: 'translate(-50%, -50%)',
+	width: 400,
+	bgcolor: 'background.paper',
+	border: '2px solid #000',
+	boxShadow: 24,
+	p: 4,
+  };
 
-	const ViewEntryHandler = () => {
-		Axios.get("/api/starId")
-			.then((response) => {
-				if (response.status === 200) {
-					navigate("/SingleStarPage", {
-						state: {
-							starId: response.data,
-						},
-					});
-				}
-			})
-	};
+export default function ViewEntries() {
+	const [show, setShow] = useState(false);
+
+	const handleClose = () => setShow(false);
+	const handleShow = () => setShow(true);
+  
+	const [stars, setStars] = useState([]);
+	const [selectedStar, setSelectedStar] = useState(null);
 
 
 	useEffect(() => {
@@ -39,6 +44,66 @@ export default function ViewEntries() {
 			.then((response) => response.json())
 			.then((data) => setStars(data));
 	}, []);
+
+	const showModal = () => {
+		console.log(selectedStar);
+		console.log(show);
+		return (
+			<Modal
+				open={show}
+				onClose={handleClose}
+				aria-labelledby="modal-modal-title"
+				aria-describedby="modal-modal-description"
+				>
+				<Box sx={style}>
+					<Typography id="modal-modal-title" variant="h6" component="h2">
+					{selectedStar?.title}
+					</Typography>
+					<Typography id="modal-modal-image" sx={{ mt: 2 }}>
+						<img src={getImageByName(selectedStar?.image)} alt={selectedStar?.title} 
+						style={{
+							width: '100%',
+							height: 'auto',
+							maxWidth: '100%',
+							maxHeight: '100%',
+							objectFit: 'contain',
+							objectPosition: 'center',
+							}}
+						/>
+					</Typography>
+					<Typography id="modal-modal-description" variant="body2" color="textSecondary" component="p">
+						{selectedStar?.competence}
+					</Typography>
+					<Typography id="modal-modal-description" variant="body2" color="textSecondary" component="p">
+						{selectedStar?.situation}
+					</Typography>
+					<Typography id="modal-modal-description" variant="body2" color="textSecondary" component="p">
+						{selectedStar?.task}
+					</Typography>
+					<Typography id="modal-modal-description" variant="body2" color="textSecondary" component="p">
+						{selectedStar?.action}
+					</Typography>
+					<Typography id="modal-modal-description" variant="body2" color="textSecondary" component="p">
+						{selectedStar?.result}
+					</Typography>
+					<Typography id="modal-modal-footer" variant="body2" color="textSecondary" component="p">
+						<Button 
+						style={{
+							fontFamily: "QuickSand",
+							color: "white",
+							backgroundColor: "rgb(0, 0, 0)",
+							borderRadius: "5px",
+						}}
+						variant="outlined" onClick={handleClose}>
+							Close
+						</Button>
+					
+					</Typography>
+				</Box>
+			</Modal>
+		  );
+	};
+
 	return (
 		<ThemeProvider theme={theme}>
 			<main>
@@ -57,35 +122,42 @@ export default function ViewEntries() {
 										component="img"
 										sx={{
 											height: "50%",
+
 										}}
 										image={getImageByName(star.image)}
 										alt="random"
 									/>
 									<CardContent sx={{ flexGrow: 1 }}>
-										<Typography
-											gutterBottom
-											variant="h5"
-											component="h2"
-											color="common.black"
-										>
+										<Typography gutterBottom variant="h5" component="h2" color="common.black">
 											{star.title}
 										</Typography>
-										<Typography color="common.black">
-											{star.competence}
-										</Typography>
+										<Typography color="common.black">{star.competence}</Typography>
 									</CardContent>
 									<CardActions>
-										<Button 
-										onClick={ViewEntryHandler}
-										size="small">View</Button>
+				
+										<Button
+										
+											onClick={() => {
+												handleShow()
+												setSelectedStar(star);
+												}}
+											sx={{
+												size: "small",
+												fontFamily: "QuickSand",
+											}}
+										>
+											View
+										</Button>
 										<ShareStar/>
 									</CardActions>
 								</Card>
 							</Grid>
 						))}
 					</Grid>
+					{showModal()}
 				</Container>
 			</main>
+			
 		</ThemeProvider>
 	);
 }
