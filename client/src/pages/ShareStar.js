@@ -7,9 +7,9 @@ import
 } from "react-share";
 
 
-export default function ShareStar ()
+export default function ShareStar (id)
  { 
-        const shareUrl = 'https://siriuswm3.herokuapp.com/'
+        const shareUrl = 'https://siriuswm3.herokuapp.com/';
         return (
             <div>
                 <LinkedinShareButton url = {shareUrl}  >

@@ -14,7 +14,6 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
 import { getImageByName } from "../utils/image.js";
 import ShareStar from "./ShareStar";
-// import ViewEntry from "./ViewEntry";
 
 const theme = createTheme();
 
@@ -106,28 +105,6 @@ export default function ViewEntries() {
 		  );
 	};
 
-	// const renderModal = (data) => {
-	// 	console.log(data);
-	// 	console.log(show);
-		// return (
-		// 	<Modal
-		// 	show={show}
-		// 	onHide={handleClose}
-			
-		//   >
-		// 	<Modal.Header closeButton>
-		// 	  <Modal.Title>{data.title}</Modal.Title>
-		// 	</Modal.Header>
-
-		// 	  <Button variant="secondary" onClick={handleClose}>
-		// 		Close
-		// 	  </Button>
-		// 	  <Button variant="primary">Understood</Button>
-		//   </Modal>
-		//   );
-		// };
-
-	
 	return (
 		<ThemeProvider theme={theme}>
 			<main>
@@ -164,15 +141,13 @@ export default function ViewEntries() {
 											onClick={() => {
 												handleShow()
 												setSelectedStar(star);
-												//showModal();
-												//renderModal(star);
 												}}
 											sx={{
 												size: "small",
 												fontFamily: "QuickSand",
 											}}
 										>
-																						View
+											View
 										</Button>
 										<ShareStar/>
 									</CardActions>
