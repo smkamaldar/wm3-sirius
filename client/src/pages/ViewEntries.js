@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Container from "@mui/material/Container";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
-
+import { useSearchParams } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -11,7 +11,6 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { useNavigate } from "react-router-dom";
 import { getImageByName } from "../utils/image.js";
 import ShareStar from "./ShareStar";
 
@@ -31,7 +30,7 @@ const style = {
 
 export default function ViewEntries() {
 	const [show, setShow] = useState(false);
-
+	const [searchParams, setSearchParams] = useSearchParams();
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
   
@@ -42,12 +41,21 @@ export default function ViewEntries() {
 	useEffect(() => {
 		fetch("/api/stars")
 			.then((response) => response.json())
-			.then((data) => setStars(data));
+			.then((data) => {
+				setStars(data);
+				let params = new URLSearchParams(searchParams);
+				let starId = params.get("starId");
+				if (starId) {
+					let starInt = parseInt(starId);
+					let star = data.find((star) => star.id === starInt);
+					setSelectedStar(star);
+					handleShow();
+				} 
+
+			});
 	}, []);
 
 	const showModal = () => {
-		console.log(selectedStar);
-		console.log(show);
 		return (
 			<Modal
 				open={show}
@@ -148,7 +156,9 @@ export default function ViewEntries() {
 										>
 											View
 										</Button>
-										<ShareStar/>
+										<ShareStar 
+										id = {selectedStar?.id}
+										 />
 									</CardActions>
 								</Card>
 							</Grid>
