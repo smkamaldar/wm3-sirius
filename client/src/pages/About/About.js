@@ -44,8 +44,6 @@ export const About = () => {
 						lorem lorem lorem lorem lorem Lorem ipsum lorem lorem lorem lorem
 					</Typography>
 				</Box>
-			</Box>
-
 	);
 };
 
