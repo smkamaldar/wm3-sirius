@@ -8,7 +8,7 @@ import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 // import AddEntry from "./AddEntry";
 
-import "./Home.css";
+// import "./Home.css";
 
 export function Home() {
 	const navigate = useNavigate();
