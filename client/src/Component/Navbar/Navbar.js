@@ -5,12 +5,12 @@ import {
     NavMenu,
     NavBtn,
     NavBtnLink,
-	NavBtnLogout
-  } from "./NavBarElements";
-  import useAuth from '../../hooks/useAuth';
+    NavBtnLogout
+} from "./NavBarElements";
+import useAuth from "../../hooks/useAuth";
 import "../../pages/Home.css";
 import image from "../../assets/Siriuslogo.png";
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 const Navbar = () => {
 	const {auth, setAuth} = useAuth();
@@ -57,7 +57,9 @@ const Navbar = () => {
 			</NavMenu>
 			<NavBtn>
 				{auth ? (
-					<NavBtnLogout onClick={handleLogout}>log out</NavBtnLogout>
+					<NavBtnLogout className="signOut" onClick={handleLogout}>
+						log out
+					</NavBtnLogout>
 				) : (
 					<NavBtnLink
 						style={{
