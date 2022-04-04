@@ -1,21 +1,14 @@
 import "./About.css";
+import * as React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
-
-
 export const About = () => {
 	return (
-		<div>
-			<Box component="section" className="section-1">
-				<Typography variant="h3" className="section-title" color="white">
-					About Sirius
-				</Typography>
-			</Box>
-
+		<Box component="main">
 			<Box component="section" className="section-2">
 				<Box className="section-content">
-					<Typography variant="h4" className="section-title" color="black">
+					<Typography variant="h3" className="section-title" color="black">
 						The STAR Methodology
 					</Typography>
 					<Typography variant="body1" className="section-text" color="black">
@@ -42,7 +35,7 @@ export const About = () => {
 					/>
 				</Box>
 				<Box className="section-content">
-					<Typography variant="h4" className="section-title" color="white">
+					<Typography variant="h3" className="section-title" color="white">
 						Site Features
 					</Typography>
 					<Typography variant="body1" className="section-text" color="white">
@@ -52,16 +45,8 @@ export const About = () => {
 					</Typography>
 				</Box>
 			</Box>
-
-			{/* <Box component="section" className="section-4">
-				<Typography variant="h4" className="section-title" color="black">
-					Meet The Team
-				</Typography>
-			</Box> */}
-		</div>
+		</Box>
 	);
 };
 
 export default About;
-
-
