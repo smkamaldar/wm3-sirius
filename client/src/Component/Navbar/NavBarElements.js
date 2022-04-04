@@ -87,9 +87,9 @@ export const NavBtnLink = styled(Link)`
 
 export const NavBtnLogout = styled.button`
   border-radius: 4px;
-  background: #256ce1;
+  background: 'black';
   padding: 10px 22px;
-  color: #fff;
+  color: 'common.white';
   outline: none;
   border: none;
   cursor: pointer;
@@ -97,9 +97,4 @@ export const NavBtnLogout = styled.button`
   text-decoration: none;
   /* Second Nav */
   margin-left: 24px;
-  &:hover {
-    transition: all 0.2s ease-in-out;
-    background: #c07373;
-    color: #010606;
-  }
 `;

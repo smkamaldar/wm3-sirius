@@ -25,5 +25,13 @@
 	border-radius: 5px;
 }
 
+.signOut {
+	background: black;
+	color:white;
+}
 
+.signOut a:hover{
+	border: 1px solid var(--pink);
+	border-radius: 5px;
+}
 
