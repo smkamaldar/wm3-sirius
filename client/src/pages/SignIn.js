@@ -56,7 +56,7 @@ const SignIn= () => {
           setAuth(response.data);
         setEmail('');
         setPassword('');
-        navigate("/viewEntries");
+        navigate("/home");
         } else {
           setErrMsg("Invalid email or password");
         }

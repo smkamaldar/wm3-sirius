@@ -17,11 +17,11 @@ const App = () => (
 		<Navbar />
 		<Box className="body">
 			<Routes>
-				<Route path="/" element={<Home />} />
+
 				<Route path="/" element={<SignIn />} />
+				<Route path= "/home" element={<Home />} />
 				<Route path="/addentry" element={<AddEntry />} />
-				<Route path="/viewentries" element={<ViewEntries />} />
-			
+				<Route path="/viewentries" element={<ViewEntries />} />			
 				<Route path="/SignIn" element={<SignIn />} />
 				<Route path="/SignUp" element={<SignUp />} />
 				<Route path="/About" element={<About />} />

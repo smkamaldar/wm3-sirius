@@ -45,7 +45,7 @@ export const About = () => {
 					</Typography>
 				</Box>
 			</Box>
-		</Box>
+
 	);
 };
 
