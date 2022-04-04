@@ -7,13 +7,13 @@ import {
     NavBtnLink,
 	NavBtnLogout
   } from "./NavBarElements";
-  import useAuth from '../../hooks/useAuth';
+  import useAuth from "../../hooks/useAuth";
 import "../../pages/Home.css";
 import image from "../../assets/Siriuslogo.png";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-	const {auth, setAuth} = useAuth();
+	const { auth, setAuth } = useAuth();
 	const navigate = useNavigate();
 	const handleLogout = ()=>{
 		fetch("/api/auth/logout",{
@@ -24,8 +24,8 @@ const Navbar = () => {
 		.then(data => {
 			setAuth(0);
 			navigate("/signin");
-		})
-	}
+		});
+	};
 	return (
 		<nav className="navbar navbar-expand-lg navbar-light bg-light">
 			<NavLink to="/" className="logo">
@@ -40,11 +40,7 @@ const Navbar = () => {
 					About
 				</NavLink>
 				<NavLink
-					to="/addentry"
-					style={{
-					color: "black"
-					}}
-				>
+					to="/addentry" style={{ color: "black" }}>
 					{" "}
 					Add A Star
 				</NavLink>
@@ -56,7 +52,7 @@ const Navbar = () => {
 				</NavLink>
 			</NavMenu>
 			<NavBtn>
-				{auth ? <NavBtnLogout onClick={handleLogout}>log out</ NavBtnLogout> : <NavBtnLink
+				{auth ? <NavBtnLogout onClick={handleLogout}>log out</NavBtnLogout> : <NavBtnLink
 				style={{
 					background: "black",
 					color: "white",
