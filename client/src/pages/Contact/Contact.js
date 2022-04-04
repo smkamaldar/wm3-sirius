@@ -99,7 +99,7 @@ export const Contact = () => {
 								sx={{ padding: "0.3rem", fontSize: "1.2rem" }}
 							>
 								Please let us know if you have any questions or feedback and
-								we"ll be in touch.
+								we'll be in touch.
 							</Typography>
 						</Box>
 						<form name="sentMessage" onSubmit={sendEmail}>
@@ -164,13 +164,13 @@ export const Contact = () => {
 				component="section"
 				className="section-4 contact-section contact-section-2"
 			>
-				<Typography variant="h3" className="section-title" color="black">
-					Meet The Team
+				<Typography variant="h4" className="section-title" color="black">
+					Meet the Team
 				</Typography>
 
 				<Box className="team-cards-wrapper">
 					{team.map((member, index) => (
-						<Card className="card" key={index} sx={{ maxWidth: 345 }}>
+						<Card className="card" key={index} sx={{ maxWidth: 335 }}>
 							<CardActionArea>
 								<CardMedia
 									component="img"
