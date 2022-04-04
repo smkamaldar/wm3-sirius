@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import ImageModal from "../Component/ImageModal/ImageModal";
+import ImageModal from "../../Component/ImageModal/ImageModal";
 import "./addEntry.css";
 
 const AddEntry = () => {
@@ -48,7 +48,7 @@ const AddEntry = () => {
 	};
 
 	return (
-		<main className="main">
+		<main className="add-star-main">
 			<div className="entryTitle">
 				<h1>Add A Star</h1>
 			</div>
