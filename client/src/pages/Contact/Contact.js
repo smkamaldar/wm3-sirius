@@ -20,25 +20,25 @@ const team = [
 	[
 		"Elmira",
 		"https://i.ibb.co/LYTLy2P/elmira.jpg",
-		"Backend",
+		"Fullstack",
 		"https://www.linkedin.com/in/elmirakamaldar/",
 	],
 	[
 		"Nonye",
 		"https://i.ibb.co/KG2LvBb/nonye.jpg",
-		"Backend",
+		"Fullstack",
 		"https://www.linkedin.com/in/nonye-ehiguese/",
 	],
 	[
-		"Hibah",
+		"Tiana",
 		"https://i.ibb.co/hyzWnGy/hibah.jpg",
-		"Frontend",
+		"Fullstack",
 		"https://www.linkedin.com/in/tianajad/",
 	],
 	[
 		"Sinead",
 		"https://i.ibb.co/fSkBNYD/sinead.png",
-		"Frontend",
+		"Fullstack",
 		"https://www.linkedin.com/in/sinead-osb-dev/",
 	],
 ];
