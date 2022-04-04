@@ -9,7 +9,7 @@ import SignUp from "./pages/SignUp";
 import ViewEntries from "./pages/ViewEntries";
 //import ShareStar from "./pages/ShareStar";
 import About from "./pages/About/About";
-import Contact from "./pages/Contact";
+import Contact from "./pages/Contact/Contact";
 import "./index.css";
 
 const App = () => (
