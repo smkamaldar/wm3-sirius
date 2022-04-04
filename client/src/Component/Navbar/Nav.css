@@ -1,4 +1,3 @@
-/* Header */
 .navbar {
 	display: flex;
 	align-items: center;
@@ -11,11 +10,12 @@
 	margin-left: 1rem;
 	text-decoration: none;
 	padding: 0.5rem;
+	font-size: 1.5em;
+	font-weight: bolder;
 }
 
 .navbar-menu a:hover {
-	border: 1px solid var(--pink);
-	border-radius: 5px;
+	text-decoration: underline;
 }
 
 

@@ -29,7 +29,7 @@ export default function Footer() {
 				</NavLink>
 			</Box>
 			<Box>
-				<Typography textAlign="center" color="black">
+				<Typography variant="h5" textAlign="center" color="black">
 					Sirius &reg; {new Date().getFullYear()}
 				</Typography>
 			</Box>
