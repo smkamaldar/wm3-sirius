@@ -88,6 +88,7 @@ export const Contact = () => {
 								className="contact-title"
 								variant="h4"
 								color="black"
+								fontWeight={700}
 								sx={{ padding: "0.3rem" }}
 							>
 								Contact Us
@@ -96,6 +97,7 @@ export const Contact = () => {
 								className="contact-subtitle"
 								variant="subtitle1"
 								color="black"
+								fontWeight={500}
 								sx={{ padding: "0.3rem", fontSize: "1.2rem" }}
 							>
 								Please let us know if you have any questions or feedback and
@@ -164,7 +166,7 @@ export const Contact = () => {
 				component="section"
 				className="section-4 contact-section contact-section-2"
 			>
-				<Typography variant="h4" className="section-title" color="black">
+				<Typography variant="h4" className="section-title" color="black" fontWeight={700}>
 					Meet the Team
 				</Typography>
 
