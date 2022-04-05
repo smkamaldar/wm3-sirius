@@ -36,7 +36,7 @@ export const About = () => {
 						passionate team of aspiring Junior Web Devs who hope to be able to
 						help you document your achievements, challenges and accomplishments
 						throughout your learning and work experiences. <br></br> <br></br>
-						Providing a convenient solution for the implementation of STAR
+						To provide a convenient solution for the implementation of STAR
 						methodology has been the driving concept behind Sirius, we have
 						created an easy to use platform for creating, viewing and sharing
 						STAR diary entries. Here at Sirius we believe that you can shine
