@@ -31,6 +31,7 @@ footer {
 .footer-link {
 	min-width: 8%;
 	font-weight: bolder;
+	font-size: 1.2em;
 	padding: 0.4rem;
 	color: black !important;
 }

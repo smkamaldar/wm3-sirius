@@ -2,7 +2,6 @@
 import { NavLink } from "../Navbar/NavBarElements";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-// import Link from "@mui/material/Link";
 import "./footer.css";
 
 export default function Footer() {
@@ -23,7 +22,7 @@ export default function Footer() {
 				</NavLink>
 			</Box>
 			<Box>
-				<Typography textAlign="center" color="black">
+				<Typography textAlign="center" color="black" fontWeight={(700)}>
 					Sirius &reg; {new Date().getFullYear()}
 				</Typography>
 			</Box>
