@@ -9,12 +9,7 @@ export const About = () => {
 		<Box component="main">
 			<Box component="section" className="section-2">
 				<Box className="section-content">
-					<Typography
-						variant="h2"
-						className="section-title"
-						color="black"
-						sx={{}}
-					>
+					<Typography variant="h2" className="section-title" color="black" fontWeight={700}>
 						Sirius
 					</Typography>
 					<Typography
@@ -22,6 +17,7 @@ export const About = () => {
 						className="section-subtitle"
 						color="black"
 						fontStyle="italic"
+						fontWeight={600}
 					>
 						Your Journey Begins Here
 					</Typography>
@@ -30,6 +26,7 @@ export const About = () => {
 						className="section-text"
 						fontSize="1.2em"
 						color="black"
+						fontWeight={500}
 						sx={{ margin: "2rem" }}
 					>
 						Welcome to Sirius, the educational application designed by a
@@ -62,7 +59,7 @@ export const About = () => {
 					/>
 				</Box>
 				<Box className="section-content">
-					<Typography variant="h2" className="section-title" color="white">
+					<Typography variant="h2" className="section-title" color="white" fontWeight={700}>
 						STAR
 					</Typography>
 					<Typography
@@ -70,6 +67,7 @@ export const About = () => {
 						className="section-subtitle"
 						color="white"
 						fontStyle="italic"
+						fontWeight={600}
 					>
 						Situation, Task, Action, Result
 					</Typography>
@@ -78,6 +76,7 @@ export const About = () => {
 						className="section-text"
 						fontSize="1.2em"
 						color="white"
+						fontWeight={500}
 						sx={{ marginTop: "2rem" }}
 					>
 						If you have ever been asked a question during an interview that
@@ -114,7 +113,7 @@ export const About = () => {
 						variant="h3"
 						className="section-title"
 						color="black"
-						sx={{}}
+						fontWeight={700}
 					>
 						Tech Stack
 					</Typography>
@@ -123,6 +122,7 @@ export const About = () => {
 						className="section-subtitle"
 						color="black"
 						fontStyle="italic"
+						fontWeight={600}
 					>
 						Postgres, Express, React, Node
 					</Typography>
@@ -131,6 +131,7 @@ export const About = () => {
 						className="section-text"
 						fontSize="1.2em"
 						color="black"
+						fontWeight={500}
 						sx={{ margin: "2rem" }}
 					>
 						Sirius have implemented ES6 and the PERN stack, believing them to be

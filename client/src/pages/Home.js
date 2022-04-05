@@ -31,7 +31,7 @@ export function Home() {
 							color="text.primary"
 							gutterBottom
 						>
-							Sirius.
+							Sirius
 						</Typography>
 						<Typography
 							fontFamily="QuickSand"
