@@ -48,16 +48,16 @@
 	border-radius: 5px;
 }
 
-.section-2 a {
+.section-3 a {
 	text-decoration: none;
 	margin-top: 1.5rem;
-	opacity:0.9;
+	opacity:0.8;
 	transition: all .3s ease-in-out;
 
 	
 }
-.section-2 a:hover {
-	opacity:1.2;
+.section-3 a:hover {
+	opacity:1;
 	transform: scale(1.1);
 }
 
