@@ -7,21 +7,19 @@ import AddEntry from "./pages/AddEntry";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import ViewEntries from "./pages/ViewEntries";
-//import ShareStar from "./pages/ShareStar";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import "./index.css";
 
 const App = () => (
 	<div>
-		<Navbar />
 		<Box className="body">
+			<Navbar />
 			<Routes>
-
 				<Route path="/" element={<SignIn />} />
-				<Route path= "/home" element={<Home />} />
+				<Route path="/home" element={<Home />} />
 				<Route path="/addentry" element={<AddEntry />} />
-				<Route path="/viewentries" element={<ViewEntries />} />			
+				<Route path="/viewentries" element={<ViewEntries />} />
 				<Route path="/SignIn" element={<SignIn />} />
 				<Route path="/SignUp" element={<SignUp />} />
 				<Route path="/About" element={<About />} />
